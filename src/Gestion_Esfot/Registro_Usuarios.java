@@ -6,16 +6,18 @@ public class Registro_Usuarios {
     int edad;
     String usuario;
     String contrasenia;
+    String cedula;
 
     public Registro_Usuarios() {
     }
 
-    public Registro_Usuarios(String nombre, String apellido, int edad, String usuario, String contrasenia) {
+    public Registro_Usuarios(String nombre, String apellido, int edad, String usuario, String contrasenia, String cedula) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.edad = edad;
         this.usuario = usuario;
         this.contrasenia = contrasenia;
+        this.cedula = cedula;
     }
 
     public String getNombre() {
@@ -56,5 +58,13 @@ public class Registro_Usuarios {
 
     public void setContrasenia(String contrasenia) {
         this.contrasenia = contrasenia;
+    }
+
+    public String getCedula() {
+        return cedula;
+    }
+
+    public void setCedula(String cedula) {
+        this.cedula = cedula;
     }
 }

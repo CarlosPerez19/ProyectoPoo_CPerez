@@ -19,6 +19,7 @@ public class Registro extends Registro_Usuarios {
     private JTextField apellido;
     private JTextField edad;
     public JPanel mainPanel;
+    private JTextField cedula;
 
     public Registro() {
         registro.addActionListener(new ActionListener() {
@@ -33,6 +34,7 @@ public class Registro extends Registro_Usuarios {
                 switch (rol.getSelectedIndex()) {
                     case 1:
                         Registro_Usuarios user = new Registro_Usuarios();
+                        user.setCedula(cedula.getText());
                         user.setNombre(nombre.getText());
                         user.setApellido(apellido.getText());
                         user.setEdad(Integer.parseInt(edad.getText()));
@@ -46,7 +48,8 @@ public class Registro extends Registro_Usuarios {
                                     .append("Apellido", user.getApellido())
                                     .append("Edad", user.getEdad())
                                     .append("Usuario", user.getUsuario())
-                                    .append("Contrasenia", user.getContrasenia());
+                                    .append("Contrasenia", user.getContrasenia())
+                                    .append("Cedula", user.getCedula());
                             collection.insertOne(documents);
                             System.out.println("Documento insertado con éxito");
 
@@ -56,6 +59,7 @@ public class Registro extends Registro_Usuarios {
 
                     case 2:
                         Registro_Usuarios user2 = new Registro_Usuarios();
+                        user2.setCedula(cedula.getText());
                         user2.setNombre(nombre.getText());
                         user2.setApellido(apellido.getText());
                         user2.setEdad(Integer.parseInt(edad.getText()));
@@ -69,7 +73,8 @@ public class Registro extends Registro_Usuarios {
                                     .append("Apellido", user2.getApellido())
                                     .append("Edad", user2.getEdad())
                                     .append("Usuario", user2.getUsuario())
-                                    .append("Contrasenia", user2.getContrasenia());
+                                    .append("Contrasenia", user2.getContrasenia())
+                                    .append("Cedula", user2.getCedula());
                             collection.insertOne(documents);
                             System.out.println("Documento insertado con éxito");
 
@@ -79,6 +84,7 @@ public class Registro extends Registro_Usuarios {
 
                     case 3:
                         Registro_Usuarios user3 = new Registro_Usuarios();
+                        user3.setCedula(cedula.getText());
                         user3.setNombre(nombre.getText());
                         user3.setApellido(apellido.getText());
                         user3.setEdad(Integer.parseInt(edad.getText()));
@@ -92,7 +98,8 @@ public class Registro extends Registro_Usuarios {
                                     .append("Apellido", user3.getApellido())
                                     .append("Edad", user3.getEdad())
                                     .append("Usuario", user3.getUsuario())
-                                    .append("Contrasenia", user3.getContrasenia());
+                                    .append("Contrasenia", user3.getContrasenia())
+                                    .append("Cedula", user3.getCedula());
                             collection.insertOne(documents);
                             System.out.println("Documento insertado con éxito");
 
