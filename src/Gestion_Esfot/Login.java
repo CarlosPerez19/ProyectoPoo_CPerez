@@ -36,11 +36,12 @@ public class Login {
                     return;
                 }
 
+
                 switch (rol.getSelectedIndex()) {
                     case 1:
                         try (MongoClient mongoClient = MongoClients.create("mongodb+srv://carlos:1234@proyectopoo.powzq9l.mongodb.net/ProyectoPoo")) {
 
-                            MongoDatabase database = mongoClient.getDatabase("Proyectoo");
+                            MongoDatabase database = mongoClient.getDatabase("ProyectoPoo");
                             MongoCollection<Document> collection = database.getCollection("Administrador");
                             FindIterable<Document> documentos = collection.find();
 
@@ -67,12 +68,19 @@ public class Login {
 
                         }
 
+                        JFrame frame = new JFrame();
+                        frame.setContentPane(new Administrador().mainPanel);
+                        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                        frame.pack();
+                        frame.setLocationRelativeTo(null);
+                        frame.setVisible(true);
+
                         break;
 
                     case 2:
                         try (MongoClient mongoClient = MongoClients.create("mongodb+srv://carlos:1234@proyectopoo.powzq9l.mongodb.net/ProyectoPoo")) {
 
-                            MongoDatabase database = mongoClient.getDatabase("Proyectoo");
+                            MongoDatabase database = mongoClient.getDatabase("ProyectoPoo");
                             MongoCollection<Document> collection = database.getCollection("Profesor");
                             FindIterable<Document> documentos = collection.find();
 
@@ -105,7 +113,7 @@ public class Login {
 
                         try (MongoClient mongoClient = MongoClients.create("mongodb+srv://carlos:1234@proyectopoo.powzq9l.mongodb.net/ProyectoPoo")) {
 
-                            MongoDatabase database = mongoClient.getDatabase("Proyectoo");
+                            MongoDatabase database = mongoClient.getDatabase("ProyectoPoo");
                             MongoCollection<Document> collection = database.getCollection("Estudiante");
                             FindIterable<Document> documentos = collection.find();
 

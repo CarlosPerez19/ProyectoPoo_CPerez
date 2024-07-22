@@ -32,14 +32,6 @@
         </constraints>
         <properties/>
       </component>
-      <component id="62798" class="javax.swing.JPasswordField" binding="contrasenia">
-        <constraints>
-          <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
-            <preferred-size width="150" height="-1"/>
-          </grid>
-        </constraints>
-        <properties/>
-      </component>
       <component id="717af" class="javax.swing.JLabel">
         <constraints>
           <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
@@ -84,6 +76,14 @@
             <item value="Estudiante"/>
           </model>
         </properties>
+      </component>
+      <component id="239ed" class="javax.swing.JPasswordField" binding="contrasenia">
+        <constraints>
+          <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="-1"/>
+          </grid>
+        </constraints>
+        <properties/>
       </component>
     </children>
   </grid>

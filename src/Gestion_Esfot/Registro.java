@@ -11,7 +11,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class Registro extends Registro_Usuarios {
-    private JPasswordField contrasenia;
+    private JTextField contrasenia;
     private JComboBox rol;
     private JTextField usuario;
     private JButton registro;
