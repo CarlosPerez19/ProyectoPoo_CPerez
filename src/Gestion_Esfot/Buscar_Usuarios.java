@@ -30,21 +30,89 @@ public class Buscar_Usuarios {
 
                 switch (rol.getSelectedIndex()) {
                     case 1:
+
+                        boolean found = false;
+
                         try (MongoClient mongoClient = MongoClients.create("mongodb+srv://carlos:1234@proyectopoo.powzq9l.mongodb.net/ProyectoPoo")) {
 
-                            MongoDatabase database = mongoClient.getDatabase("Proyectoo");
+                            MongoDatabase database = mongoClient.getDatabase("ProyectoPoo");
                             MongoCollection<Document> collection = database.getCollection("Administrador");
                             FindIterable<Document> documentos = collection.find();
 
                             String cedula_buscar = cedula.getText();
 
                             for (Document documento : documentos) {
-                                if (cedula_buscar.equals(documento.getString("cedula"))) {
+                                if (cedula_buscar.equals(documento.getString("Cedula"))) {
+                                    found = true;
                                     JOptionPane.showMessageDialog(null, "Cedula existente");
-
+                                    JOptionPane.showMessageDialog(null, "Nombre: " + documento.getString("Nombre:") + "\n" + "Apellido: " + documento.getString("Apellido")
+                                            + "\n" + "Edad: " + documento.getInteger("Edad") + "\n" + "Usuario: " + documento.getString("Usuario"));
+                                    break;
                                 }
                             }
+
+                            if(!found){
+                                JOptionPane.showMessageDialog(null, "Cedula no registrada");
+                            }
                         }
+
+                        break;
+
+                    case 2:
+                        boolean found2 = false;
+
+                        try (MongoClient mongoClient = MongoClients.create("mongodb+srv://carlos:1234@proyectopoo.powzq9l.mongodb.net/ProyectoPoo")) {
+
+                            MongoDatabase database = mongoClient.getDatabase("ProyectoPoo");
+                            MongoCollection<Document> collection = database.getCollection("Profesor");
+                            FindIterable<Document> documentos = collection.find();
+
+                            String cedula_buscar = cedula.getText();
+
+                            for (Document documento : documentos) {
+                                if (cedula_buscar.equals(documento.getString("Cedula"))) {
+                                    found2 = true;
+                                    JOptionPane.showMessageDialog(null, "Cedula existente");
+                                    JOptionPane.showMessageDialog(null, "Nombre: " + documento.getString("Nombre:") + "\n" + "Apellido: " + documento.getString("Apellido")
+                                            + "\n" + "Edad: " + documento.getInteger("Edad") + "\n" + "Usuario: " + documento.getString("Usuario"));
+                                    break;
+                                }
+                            }
+
+                            if(!found2){
+                                JOptionPane.showMessageDialog(null, "Cedula no registrada");
+                            }
+                        }
+
+                        break;
+
+                    case 3:
+                        boolean found3 = false;
+
+                        try (MongoClient mongoClient = MongoClients.create("mongodb+srv://carlos:1234@proyectopoo.powzq9l.mongodb.net/ProyectoPoo")) {
+
+                            MongoDatabase database = mongoClient.getDatabase("ProyectoPoo");
+                            MongoCollection<Document> collection = database.getCollection("Administrador");
+                            FindIterable<Document> documentos = collection.find();
+
+                            String cedula_buscar = cedula.getText();
+
+                            for (Document documento : documentos) {
+                                if (cedula_buscar.equals(documento.getString("Cedula"))) {
+                                    found3 = true;
+                                    JOptionPane.showMessageDialog(null, "Cedula existente");
+                                    JOptionPane.showMessageDialog(null, "Nombre: " + documento.getString("Nombre:") + "\n" + "Apellido: " + documento.getString("Apellido")
+                                            + "\n" + "Edad: " + documento.getInteger("Edad") + "\n" + "Usuario: " + documento.getString("Usuario"));
+                                    break;
+                                }
+                            }
+
+                            if(!found3){
+                                JOptionPane.showMessageDialog(null, "Cedula no registrada");
+                            }
+                        }
+
+                        break;
                 }
             }
         });

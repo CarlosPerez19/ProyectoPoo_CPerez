@@ -8,6 +8,7 @@ public class Usuarios {
     private JButton registrar;
     private JButton buscar;
     public JPanel mainPanel;
+    private JButton eliminar;
 
     public Usuarios() {
         registrar.addActionListener(new ActionListener() {
@@ -29,6 +30,18 @@ public class Usuarios {
                 JFrame frame = new JFrame();
                 frame.setTitle("Buscar Usuario");
                 frame.setContentPane(new Buscar_Usuarios().mainPanel);
+                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                frame.pack();
+                frame.setLocationRelativeTo(null);
+                frame.setVisible(true);
+            }
+        });
+        eliminar.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFrame frame = new JFrame();
+                frame.setTitle("Eliminar Usuario");
+                frame.setContentPane(new Eliminar_Usuarios().mainPanel);
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 frame.pack();
                 frame.setLocationRelativeTo(null);
