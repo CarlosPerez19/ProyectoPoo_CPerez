@@ -2,6 +2,7 @@ package Gestion_Esfot;
 
 public class Registro_Laboratorios {
 
+    String codigo_lab;
     int numero_laboratorio;
     String nombre_laboratorio;
     int capacidad_laboratorio;
@@ -10,11 +11,20 @@ public class Registro_Laboratorios {
     public Registro_Laboratorios() {
     }
 
-    public Registro_Laboratorios(int numero_laboratorio, String nombre_laboratorio, int capacidad_laboratorio, int numero_computadores) {
+    public Registro_Laboratorios(String codigo_lab, int numero_laboratorio, String nombre_laboratorio, int capacidad_laboratorio, int numero_computadores) {
+        this.codigo_lab = codigo_lab;
         this.numero_laboratorio = numero_laboratorio;
         this.nombre_laboratorio = nombre_laboratorio;
         this.capacidad_laboratorio = capacidad_laboratorio;
         this.numero_computadores = numero_computadores;
+    }
+
+    public String getCodigo_lab() {
+        return codigo_lab;
+    }
+
+    public void setCodigo_lab(String codigo_lab) {
+        this.codigo_lab = codigo_lab;
     }
 
     public int getNumero_laboratorio() {

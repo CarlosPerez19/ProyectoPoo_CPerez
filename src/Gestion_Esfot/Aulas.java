@@ -4,42 +4,43 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class Laboratorios {
+public class Aulas {
     private JButton registrar;
-    private JButton buscarButton;
-    private JButton eliminarButton;
+    private JButton eliminar;
+    private JButton buscar;
     public JPanel mainPanel;
 
-    public Laboratorios() {
+    public Aulas() {
         registrar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 JFrame frame = new JFrame();
-                frame.setContentPane(new Registro_Laboratorios_Admin().mainPanel);
-                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                frame.pack();
-                frame.setLocationRelativeTo(null);
-                frame.setVisible(true);
-
-            }
-        });
-        eliminarButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                JFrame frame = new JFrame();
-                frame.setContentPane(new Eliminar_Laboratorios().mainPanel);
+                frame.setTitle("Registrar Aula");
+                frame.setContentPane(new Registro_Aulas_Admin().mainPanel);
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 frame.pack();
                 frame.setLocationRelativeTo(null);
                 frame.setVisible(true);
             }
         });
-
-        buscarButton.addActionListener(new ActionListener() {
+        eliminar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 JFrame frame = new JFrame();
-                frame.setContentPane(new Buscar_Laboratorios().mainPanel);
+                frame.setTitle("Eliminar Aula");
+                frame.setContentPane(new Eliminar_Aula().mainPanel);
+                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                frame.pack();
+                frame.setLocationRelativeTo(null);
+                frame.setVisible(true);
+            }
+        });
+        buscar.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFrame frame = new JFrame();
+                frame.setTitle("Buscar Aula");
+                frame.setContentPane(new Buscar_Aula().mainPanel);
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 frame.pack();
                 frame.setLocationRelativeTo(null);

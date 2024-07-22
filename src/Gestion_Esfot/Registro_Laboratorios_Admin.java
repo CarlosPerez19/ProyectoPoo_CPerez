@@ -17,6 +17,7 @@ public class Registro_Laboratorios_Admin {
     private JTextField pc_lab;
     private JButton registrar;
     public JPanel mainPanel;
+    private JTextField codigo_lab;
 
 
     public Registro_Laboratorios_Admin() {
@@ -30,6 +31,7 @@ public class Registro_Laboratorios_Admin {
                 }
 
                 Registro_Laboratorios laboratorio = new Registro_Laboratorios();
+                laboratorio.setCodigo_lab(codigo_lab.getText());
                 laboratorio.setNumero_laboratorio(Integer.parseInt(numero_lab.getText()));
                 laboratorio.setNombre_laboratorio(nombre_lab.getText());
                 laboratorio.setCapacidad_laboratorio(Integer.parseInt(capacidad_lab.getText()));
@@ -41,7 +43,8 @@ public class Registro_Laboratorios_Admin {
                     org.bson.Document documents = new Document("Numero Lab",laboratorio.getNumero_laboratorio())
                             .append("Nombre Lab", laboratorio.getNombre_laboratorio())
                             .append("Capacidad", laboratorio.getCapacidad_laboratorio())
-                            .append("Computadores", laboratorio.getNumero_computadores());
+                            .append("Computadores", laboratorio.getNumero_computadores())
+                            .append("Codigo Lab", laboratorio.getCodigo_lab());
                     collection.insertOne(documents);
                     System.out.println("Documento insertado con éxito");
 
