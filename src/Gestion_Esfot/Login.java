@@ -105,6 +105,13 @@ public class Login {
                                 JOptionPane.showMessageDialog(null, "Usuario y Contraseña Incorrectos");
                             }
 
+                            JFrame frame2 = new JFrame();
+                            frame2.setContentPane(new Profesor().mainPanel);
+                            frame2.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                            frame2.pack();
+                            frame2.setLocationRelativeTo(null);
+                            frame2.setVisible(true);
+
                         }
 
                         break;
@@ -139,6 +146,13 @@ public class Login {
                             }
 
                         }
+
+                        JFrame frame3 = new JFrame();
+                        frame3.setContentPane(new Reservas_Aulas().mainPanel);
+                        frame3.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                        frame3.pack();
+                        frame3.setLocationRelativeTo(null);
+                        frame3.setVisible(true);
 
                         break;
 
