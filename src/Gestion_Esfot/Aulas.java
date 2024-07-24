@@ -9,7 +9,7 @@ public class Aulas {
     private JButton eliminar;
     private JButton buscar;
     public JPanel mainPanel;
-    private JButton actualizarButton;
+    private JButton actualizar;
 
     public Aulas() {
         registrar.addActionListener(new ActionListener() {
@@ -50,7 +50,7 @@ public class Aulas {
         });
 
 
-        actualizarButton.addActionListener(new ActionListener() {
+        actualizar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 JFrame frame = new JFrame();

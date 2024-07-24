@@ -12,11 +12,11 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class Actualizar_Aulas {
+    public JPanel mainPanel;
     private JTextField codigo_aula;
-    private JComboBox actualizar_element;
+    private JComboBox element_act;
     private JTextField actualizacion;
     private JButton actualizar;
-    public JPanel mainPanel;
 
     public Actualizar_Aulas() {
         actualizar.addActionListener(new ActionListener() {
@@ -28,7 +28,7 @@ public class Actualizar_Aulas {
                     MongoCollection<Document> collection = database.getCollection("Aulas");
                     String aula_actualizar = codigo_aula.getText();
 
-                    switch (actualizar_element.getSelectedIndex()) {
+                    switch (element_act.getSelectedIndex()) {
                         case 1:
                             Document filtro = new Document("Codigo Aula", aula_actualizar);
                             Document actualizar = new Document("$set", new Document("Numero Aula", actualizacion.getText()));
@@ -52,8 +52,6 @@ public class Actualizar_Aulas {
                             System.out.println("Documentos modificados: " + resultado3.getModifiedCount());
 
                             break;
-
-
                     }
 
                 } catch (Exception ex){
