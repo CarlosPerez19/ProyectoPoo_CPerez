@@ -20,7 +20,7 @@ public class Login {
             @Override
             public void actionPerformed(ActionEvent e) {
                 JFrame frame = new JFrame();
-                frame.setContentPane(new Registro().mainPanel);
+                frame.setContentPane(new Registrar_UsuariosForm().mainPanel);
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 frame.pack();
                 frame.setLocationRelativeTo(null);
