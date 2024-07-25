@@ -11,6 +11,7 @@ public class Buscar_Laboratorios {
     private JTextField codigo_lab;
     private JButton buscar;
     public JPanel mainPanel;
+    private JButton volver;
 
     public Buscar_Laboratorios() {
         buscar.addActionListener(new ActionListener() {
@@ -46,6 +47,17 @@ public class Buscar_Laboratorios {
                         JOptionPane.showMessageDialog(null, "Laboratorio no registrado");
                     }
                 }
+            }
+        });
+        volver.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFrame frame = new JFrame();
+                frame.setContentPane(new Laboratorios().mainPanel);
+                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                frame.pack();
+                frame.setLocationRelativeTo(null);
+                frame.setVisible(true);
             }
         });
     }

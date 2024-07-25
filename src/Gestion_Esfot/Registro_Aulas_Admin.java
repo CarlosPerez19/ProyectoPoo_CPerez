@@ -17,6 +17,7 @@ public class Registro_Aulas_Admin {
     private JButton registrar;
     public JPanel mainPanel;
     private JTextField bancas_aula;
+    private JButton volver;
 
     public Registro_Aulas_Admin() {
         registrar.addActionListener(new ActionListener() {
@@ -44,9 +45,20 @@ public class Registro_Aulas_Admin {
                     collection.insertOne(documents);
                     JOptionPane.showMessageDialog(null, "Registro agregado correctamente");
                     System.out.println("Documento insertado con éxito");
-
                 }
 
+            }
+        });
+        volver.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFrame frame = new JFrame();
+                frame.setTitle("Volver");
+                frame.setContentPane(new Aulas().mainPanel);
+                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                frame.pack();
+                frame.setLocationRelativeTo(null);
+                frame.setVisible(true);
             }
         });
     }

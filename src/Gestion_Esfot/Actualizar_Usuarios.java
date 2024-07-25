@@ -18,6 +18,7 @@ public class Actualizar_Usuarios {
     private JComboBox rol;
     private JComboBox actulizar_element;
     private JTextField actualizacion;
+    private JButton volver;
 
     public Actualizar_Usuarios() {
         actualizar.addActionListener(new ActionListener() {
@@ -201,6 +202,17 @@ public class Actualizar_Usuarios {
 
                         break;
                 }
+            }
+        });
+        volver.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFrame frame = new JFrame();
+                frame.setContentPane(new Usuarios().mainPanel);
+                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                frame.pack();
+                frame.setLocationRelativeTo(null);
+                frame.setVisible(true);
             }
         });
     }

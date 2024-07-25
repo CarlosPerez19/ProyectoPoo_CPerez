@@ -20,6 +20,7 @@ public class Registrar_UsuariosForm {
     private JTextField contrasenia;
     private JComboBox rol;
     public JPanel mainPanel;
+    private JButton volver;
     private JFrame frame;
 
     public Registrar_UsuariosForm() {
@@ -63,7 +64,6 @@ public class Registrar_UsuariosForm {
                             JOptionPane.showMessageDialog(null, "Error al registrar el usuario");
                             ex.printStackTrace();
                         }
-
                         break;
 
                     case 2:
@@ -90,10 +90,20 @@ public class Registrar_UsuariosForm {
                             JOptionPane.showMessageDialog(null, "Error al registrar el usuario");
                             ex.printStackTrace();
                         }
-
                         break;
-
                 }
+            }
+        });
+        volver.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFrame frame = new JFrame();
+                frame.setContentPane(new Login().mainPanel);
+                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                frame.pack();
+                frame.setLocationRelativeTo(null);
+                frame.setVisible(true);
+
             }
         });
     }

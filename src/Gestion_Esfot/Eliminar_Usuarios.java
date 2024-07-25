@@ -13,6 +13,7 @@ public class Eliminar_Usuarios {
     private JButton eliminar;
     private JComboBox rol;
     public JPanel mainPanel;
+    private JButton volver;
 
     public Eliminar_Usuarios() {
         eliminar.addActionListener(new ActionListener() {
@@ -83,6 +84,17 @@ public class Eliminar_Usuarios {
 
                         break;
                 }
+            }
+        });
+        volver.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFrame frame = new JFrame();
+                frame.setContentPane(new Usuarios().mainPanel);
+                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                frame.pack();
+                frame.setLocationRelativeTo(null);
+                frame.setVisible(true);
             }
         });
     }

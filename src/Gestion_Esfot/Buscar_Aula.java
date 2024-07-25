@@ -11,6 +11,7 @@ public class Buscar_Aula {
     private JTextField codigo_aula;
     private JButton buscar;
     public JPanel mainPanel;
+    private JButton volver;
 
     public Buscar_Aula() {
         buscar.addActionListener(new ActionListener() {
@@ -46,6 +47,17 @@ public class Buscar_Aula {
                         JOptionPane.showMessageDialog(null, "Aula no registrada");
                     }
                 }
+            }
+        });
+        volver.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFrame frame = new JFrame();
+                frame.setContentPane(new Aulas().mainPanel);
+                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                frame.pack();
+                frame.setLocationRelativeTo(null);
+                frame.setVisible(true);
             }
         });
     }

@@ -17,6 +17,7 @@ public class Actualizar_Aulas {
     private JComboBox element_act;
     private JTextField actualizacion;
     private JButton actualizar;
+    private JButton volver;
 
     public Actualizar_Aulas() {
         actualizar.addActionListener(new ActionListener() {
@@ -57,6 +58,17 @@ public class Actualizar_Aulas {
                 } catch (Exception ex){
                     JOptionPane.showMessageDialog(null, "Error al actualizar el laboratorio");
                 }
+            }
+        });
+        volver.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFrame frame = new JFrame();
+                frame.setContentPane(new Aulas().mainPanel);
+                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                frame.pack();
+                frame.setLocationRelativeTo(null);
+                frame.setVisible(true);
             }
         });
     }

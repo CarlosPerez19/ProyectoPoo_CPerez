@@ -20,6 +20,7 @@ public class Registro extends Registro_Usuarios {
     private JTextField edad;
     public JPanel mainPanel;
     private JTextField cedula;
+    private JButton volver;
 
     public Registro() {
         registro.addActionListener(new ActionListener() {
@@ -54,7 +55,6 @@ public class Registro extends Registro_Usuarios {
                             System.out.println("Documento insertado con éxito");
 
                         }
-
                         break;
 
                     case 2:
@@ -79,7 +79,6 @@ public class Registro extends Registro_Usuarios {
                             System.out.println("Documento insertado con éxito");
 
                         }
-
                         break;
 
                     case 3:
@@ -104,12 +103,22 @@ public class Registro extends Registro_Usuarios {
                             System.out.println("Documento insertado con éxito");
 
                         }
-
                         break;
                 }
 
             }
 
+        });
+        volver.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFrame frame = new JFrame();
+                frame.setContentPane(new Usuarios().mainPanel);
+                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                frame.pack();
+                frame.setLocationRelativeTo(null);
+                frame.setVisible(true);
+            }
         });
     }
 }

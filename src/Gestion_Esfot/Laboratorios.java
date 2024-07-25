@@ -10,6 +10,7 @@ public class Laboratorios {
     private JButton eliminarButton;
     public JPanel mainPanel;
     private JButton actualizar;
+    private JButton volver;
 
     public Laboratorios() {
         registrar.addActionListener(new ActionListener() {
@@ -52,6 +53,17 @@ public class Laboratorios {
             public void actionPerformed(ActionEvent e) {
                 JFrame frame = new JFrame();
                 frame.setContentPane(new Actualizar_Laboratorios().mainPanel);
+                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                frame.pack();
+                frame.setLocationRelativeTo(null);
+                frame.setVisible(true);
+            }
+        });
+        volver.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFrame frame = new JFrame();
+                frame.setContentPane(new Administrador().mainPanel);
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 frame.pack();
                 frame.setLocationRelativeTo(null);

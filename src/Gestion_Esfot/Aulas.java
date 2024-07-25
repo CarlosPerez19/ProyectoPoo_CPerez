@@ -10,8 +10,10 @@ public class Aulas {
     private JButton buscar;
     public JPanel mainPanel;
     private JButton actualizar;
+    private JButton volver;
 
     public Aulas() {
+
         registrar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -48,14 +50,24 @@ public class Aulas {
                 frame.setVisible(true);
             }
         });
-
-
         actualizar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 JFrame frame = new JFrame();
                 frame.setTitle("Actualizar Aula");
                 frame.setContentPane(new Actualizar_Aulas().mainPanel);
+                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                frame.pack();
+                frame.setLocationRelativeTo(null);
+                frame.setVisible(true);
+            }
+        });
+        volver.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFrame frame = new JFrame();
+                frame.setTitle("Volver");
+                frame.setContentPane(new Administrador().mainPanel);
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 frame.pack();
                 frame.setLocationRelativeTo(null);

@@ -17,6 +17,7 @@ public class Actualizar_Laboratorios {
     private JButton actualizar;
     private JTextField actualizacion;
     public JPanel mainPanel;
+    private JButton volver;
 
     public Actualizar_Laboratorios() {
         actualizar.addActionListener(new ActionListener() {
@@ -67,6 +68,17 @@ public class Actualizar_Laboratorios {
                 } catch (Exception ex){
                     JOptionPane.showMessageDialog(null, "Error al actualizar el laboratorio");
                 }
+            }
+        });
+        volver.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFrame frame = new JFrame();
+                frame.setContentPane(new Laboratorios().mainPanel);
+                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                frame.pack();
+                frame.setLocationRelativeTo(null);
+                frame.setVisible(true);
             }
         });
     }

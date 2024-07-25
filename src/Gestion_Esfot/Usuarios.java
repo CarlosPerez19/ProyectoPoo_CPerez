@@ -10,6 +10,7 @@ public class Usuarios {
     public JPanel mainPanel;
     private JButton eliminar;
     private JButton actualizar;
+    private JButton volver;
 
     public Usuarios() {
         registrar.addActionListener(new ActionListener() {
@@ -54,6 +55,18 @@ public class Usuarios {
             public void actionPerformed(ActionEvent e) {
                 JFrame frame = new JFrame();
                 frame.setContentPane(new Actualizar_Usuarios().mainPanel);
+                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                frame.pack();
+                frame.setLocationRelativeTo(null);
+                frame.setVisible(true);
+            }
+        });
+        volver.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFrame frame = new JFrame();
+                frame.setTitle("Volver");
+                frame.setContentPane(new Administrador().mainPanel);
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 frame.pack();
                 frame.setLocationRelativeTo(null);

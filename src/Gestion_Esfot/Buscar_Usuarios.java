@@ -12,6 +12,7 @@ public class Buscar_Usuarios {
     private JButton buscar;
     public JPanel mainPanel;
     private JComboBox rol;
+    private JButton volver;
 
     public Buscar_Usuarios() {
         buscar.addActionListener(new ActionListener() {
@@ -114,6 +115,17 @@ public class Buscar_Usuarios {
 
                         break;
                 }
+            }
+        });
+        volver.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFrame frame = new JFrame();
+                frame.setContentPane(new Usuarios().mainPanel);
+                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                frame.pack();
+                frame.setLocationRelativeTo(null);
+                frame.setVisible(true);
             }
         });
     }

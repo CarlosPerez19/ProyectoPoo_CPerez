@@ -15,6 +15,7 @@ public class Eliminar_Laboratorios {
     private JTextField codigo_lab;
     private JButton eliminar;
     public JPanel mainPanel;
+    private JButton volver;
 
     public Eliminar_Laboratorios() {
         eliminar.addActionListener(new ActionListener() {
@@ -39,6 +40,17 @@ public class Eliminar_Laboratorios {
                 } catch (Exception ex){
                     JOptionPane.showMessageDialog(null, "Error al eliminar el Laboratorio");
                 }
+            }
+        });
+        volver.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFrame frame = new JFrame();
+                frame.setContentPane(new Laboratorios().mainPanel);
+                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                frame.pack();
+                frame.setLocationRelativeTo(null);
+                frame.setVisible(true);
             }
         });
     }

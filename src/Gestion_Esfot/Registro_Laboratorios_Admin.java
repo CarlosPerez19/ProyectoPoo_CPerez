@@ -18,6 +18,7 @@ public class Registro_Laboratorios_Admin {
     private JButton registrar;
     public JPanel mainPanel;
     private JTextField codigo_lab;
+    private JButton volver;
 
 
     public Registro_Laboratorios_Admin() {
@@ -49,6 +50,17 @@ public class Registro_Laboratorios_Admin {
                     System.out.println("Documento insertado con éxito");
 
                 }
+            }
+        });
+        volver.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFrame frame = new JFrame();
+                frame.setContentPane(new Laboratorios().mainPanel);
+                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                frame.pack();
+                frame.setLocationRelativeTo(null);
+                frame.setVisible(true);
             }
         });
     }

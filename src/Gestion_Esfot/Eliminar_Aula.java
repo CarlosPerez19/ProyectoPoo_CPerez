@@ -15,6 +15,7 @@ public class Eliminar_Aula {
     private JTextField codigo_aula;
     private JButton eliminar;
     public JPanel mainPanel;
+    private JButton volver;
 
     public Eliminar_Aula() {
         eliminar.addActionListener(new ActionListener() {
@@ -39,6 +40,17 @@ public class Eliminar_Aula {
                 } catch (Exception ex){
                     JOptionPane.showMessageDialog(null, "Error al eliminar el Aula");
                 }
+            }
+        });
+        volver.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFrame frame = new JFrame();
+                frame.setContentPane(new Aulas().mainPanel);
+                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                frame.pack();
+                frame.setLocationRelativeTo(null);
+                frame.setVisible(true);
             }
         });
     }
