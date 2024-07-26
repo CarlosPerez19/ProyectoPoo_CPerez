@@ -45,7 +45,13 @@ public class Registro_Aulas_Admin {
                     collection.insertOne(documents);
                     JOptionPane.showMessageDialog(null, "Registro agregado correctamente");
                     System.out.println("Documento insertado con éxito");
+
+                }catch (Exception ex) {
+                    JOptionPane.showMessageDialog(null, "Error en la conexion");
+                    ex.printStackTrace();
                 }
+
+                ((JFrame) SwingUtilities.getWindowAncestor(registrar)).dispose();
 
             }
         });
@@ -59,6 +65,8 @@ public class Registro_Aulas_Admin {
                 frame.pack();
                 frame.setLocationRelativeTo(null);
                 frame.setVisible(true);
+
+                ((JFrame) SwingUtilities.getWindowAncestor(volver)).dispose();
             }
         });
     }

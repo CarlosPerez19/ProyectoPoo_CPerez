@@ -92,6 +92,8 @@ public class Registrar_UsuariosForm {
                         }
                         break;
                 }
+
+                ((JFrame) SwingUtilities.getWindowAncestor(registrar)).dispose();
             }
         });
         volver.addActionListener(new ActionListener() {
@@ -103,6 +105,8 @@ public class Registrar_UsuariosForm {
                 frame.pack();
                 frame.setLocationRelativeTo(null);
                 frame.setVisible(true);
+
+                ((JFrame) SwingUtilities.getWindowAncestor(volver)).dispose();
 
             }
         });

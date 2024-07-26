@@ -53,7 +53,12 @@ public class Reservas_Aulas {
                     JOptionPane.showMessageDialog(null, "Registro agregado correctamente");
                     System.out.println("Documento insertado con éxito");
 
+                } catch (Exception ex) {
+                    JOptionPane.showMessageDialog(null, "Error al insertar Documento");
+                    ex.printStackTrace();
                 }
+
+                ((JFrame) SwingUtilities.getWindowAncestor(reservar)).dispose();
             }
         });
     }

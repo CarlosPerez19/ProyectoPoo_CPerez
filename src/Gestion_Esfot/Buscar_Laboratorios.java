@@ -46,7 +46,13 @@ public class Buscar_Laboratorios {
                     if (!found) {
                         JOptionPane.showMessageDialog(null, "Laboratorio no registrado");
                     }
+
+                }catch (Exception ex) {
+                    JOptionPane.showMessageDialog(null, "Error de conexion");
+                    ex.printStackTrace();
                 }
+
+                ((JFrame) SwingUtilities.getWindowAncestor(buscar)).dispose();
             }
         });
         volver.addActionListener(new ActionListener() {
@@ -58,6 +64,8 @@ public class Buscar_Laboratorios {
                 frame.pack();
                 frame.setLocationRelativeTo(null);
                 frame.setVisible(true);
+
+                ((JFrame) SwingUtilities.getWindowAncestor(volver)).dispose();
             }
         });
     }

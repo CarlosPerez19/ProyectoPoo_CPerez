@@ -24,6 +24,8 @@ public class Aulas {
                 frame.pack();
                 frame.setLocationRelativeTo(null);
                 frame.setVisible(true);
+
+                ((JFrame) SwingUtilities.getWindowAncestor(registrar)).dispose();
             }
         });
         eliminar.addActionListener(new ActionListener() {
@@ -36,6 +38,8 @@ public class Aulas {
                 frame.pack();
                 frame.setLocationRelativeTo(null);
                 frame.setVisible(true);
+
+                ((JFrame) SwingUtilities.getWindowAncestor(eliminar)).dispose();
             }
         });
         buscar.addActionListener(new ActionListener() {
@@ -48,6 +52,8 @@ public class Aulas {
                 frame.pack();
                 frame.setLocationRelativeTo(null);
                 frame.setVisible(true);
+
+                ((JFrame) SwingUtilities.getWindowAncestor(buscar)).dispose();
             }
         });
         actualizar.addActionListener(new ActionListener() {
@@ -60,6 +66,8 @@ public class Aulas {
                 frame.pack();
                 frame.setLocationRelativeTo(null);
                 frame.setVisible(true);
+
+                ((JFrame) SwingUtilities.getWindowAncestor(actualizar)).dispose();
             }
         });
         volver.addActionListener(new ActionListener() {
@@ -72,6 +80,8 @@ public class Aulas {
                 frame.pack();
                 frame.setLocationRelativeTo(null);
                 frame.setVisible(true);
+
+                ((JFrame) SwingUtilities.getWindowAncestor(volver)).dispose();
             }
         });
     }

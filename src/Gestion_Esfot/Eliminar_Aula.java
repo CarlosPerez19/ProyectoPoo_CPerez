@@ -40,6 +40,8 @@ public class Eliminar_Aula {
                 } catch (Exception ex){
                     JOptionPane.showMessageDialog(null, "Error al eliminar el Aula");
                 }
+
+                ((JFrame) SwingUtilities.getWindowAncestor(eliminar)).dispose();
             }
         });
         volver.addActionListener(new ActionListener() {
@@ -51,6 +53,8 @@ public class Eliminar_Aula {
                 frame.pack();
                 frame.setLocationRelativeTo(null);
                 frame.setVisible(true);
+
+                ((JFrame) SwingUtilities.getWindowAncestor(volver)).dispose();
             }
         });
     }

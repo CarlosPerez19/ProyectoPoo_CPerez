@@ -40,6 +40,8 @@ public class Eliminar_Laboratorios {
                 } catch (Exception ex){
                     JOptionPane.showMessageDialog(null, "Error al eliminar el Laboratorio");
                 }
+
+                ((JFrame) SwingUtilities.getWindowAncestor(eliminar)).dispose();
             }
         });
         volver.addActionListener(new ActionListener() {
@@ -51,6 +53,8 @@ public class Eliminar_Laboratorios {
                 frame.pack();
                 frame.setLocationRelativeTo(null);
                 frame.setVisible(true);
+
+                ((JFrame) SwingUtilities.getWindowAncestor(volver)).dispose();
             }
         });
     }

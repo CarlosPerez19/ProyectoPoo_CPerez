@@ -115,6 +115,8 @@ public class Buscar_Usuarios {
 
                         break;
                 }
+
+                ((JFrame) SwingUtilities.getWindowAncestor(buscar)).dispose();
             }
         });
         volver.addActionListener(new ActionListener() {
@@ -126,6 +128,8 @@ public class Buscar_Usuarios {
                 frame.pack();
                 frame.setLocationRelativeTo(null);
                 frame.setVisible(true);
+
+                ((JFrame) SwingUtilities.getWindowAncestor(volver)).dispose();
             }
         });
     }

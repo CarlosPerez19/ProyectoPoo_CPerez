@@ -18,6 +18,7 @@ public class Reserva_Laboratorios {
     private JButton reservar;
     public JPanel mainPanel;
     private JTextField num_dia;
+    private JButton volver;
 
     public Reserva_Laboratorios() {
         reservar.addActionListener(new ActionListener() {
@@ -53,7 +54,25 @@ public class Reserva_Laboratorios {
                     JOptionPane.showMessageDialog(null, "Registro agregado correctamente");
                     System.out.println("Documento insertado con éxito");
 
+                } catch (Exception ex) {
+                    JOptionPane.showMessageDialog(null, "Error de conexion");
+                    ex.printStackTrace();
                 }
+
+                ((JFrame) SwingUtilities.getWindowAncestor(reservar)).dispose();
+            }
+        });
+        volver.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFrame frame = new JFrame();
+                frame.setContentPane(new Profesor().mainPanel);
+                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                frame.pack();
+                frame.setLocationRelativeTo(null);
+                frame.setVisible(true);
+
+                ((JFrame) SwingUtilities.getWindowAncestor(volver)).dispose();
             }
         });
     }

@@ -46,7 +46,12 @@ public class Buscar_Aula {
                     if (!found) {
                         JOptionPane.showMessageDialog(null, "Aula no registrada");
                     }
+                } catch (Exception ex) {
+                    JOptionPane.showMessageDialog(null, "Error de conexion");
+                    ex.printStackTrace();
                 }
+
+                ((JFrame) SwingUtilities.getWindowAncestor(buscar)).dispose();
             }
         });
         volver.addActionListener(new ActionListener() {
@@ -58,6 +63,8 @@ public class Buscar_Aula {
                 frame.pack();
                 frame.setLocationRelativeTo(null);
                 frame.setVisible(true);
+
+                ((JFrame) SwingUtilities.getWindowAncestor(volver)).dispose();
             }
         });
     }

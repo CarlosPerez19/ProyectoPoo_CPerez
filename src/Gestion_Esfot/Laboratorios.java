@@ -23,6 +23,8 @@ public class Laboratorios {
                 frame.setLocationRelativeTo(null);
                 frame.setVisible(true);
 
+                ((JFrame) SwingUtilities.getWindowAncestor(registrar)).dispose();
+
             }
         });
         eliminarButton.addActionListener(new ActionListener() {
@@ -34,6 +36,8 @@ public class Laboratorios {
                 frame.pack();
                 frame.setLocationRelativeTo(null);
                 frame.setVisible(true);
+
+                ((JFrame) SwingUtilities.getWindowAncestor(eliminarButton)).dispose();
             }
         });
 
@@ -46,6 +50,8 @@ public class Laboratorios {
                 frame.pack();
                 frame.setLocationRelativeTo(null);
                 frame.setVisible(true);
+
+                ((JFrame) SwingUtilities.getWindowAncestor(buscarButton)).dispose();
             }
         });
         actualizar.addActionListener(new ActionListener() {
@@ -57,6 +63,8 @@ public class Laboratorios {
                 frame.pack();
                 frame.setLocationRelativeTo(null);
                 frame.setVisible(true);
+
+                ((JFrame) SwingUtilities.getWindowAncestor(actualizar)).dispose();
             }
         });
         volver.addActionListener(new ActionListener() {
@@ -68,6 +76,8 @@ public class Laboratorios {
                 frame.pack();
                 frame.setLocationRelativeTo(null);
                 frame.setVisible(true);
+
+                ((JFrame) SwingUtilities.getWindowAncestor(volver)).dispose();
             }
         });
     }

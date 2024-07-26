@@ -202,6 +202,8 @@ public class Actualizar_Usuarios {
 
                         break;
                 }
+                ((JFrame) SwingUtilities.getWindowAncestor(actualizar)).dispose();
+
             }
         });
         volver.addActionListener(new ActionListener() {
@@ -213,6 +215,8 @@ public class Actualizar_Usuarios {
                 frame.pack();
                 frame.setLocationRelativeTo(null);
                 frame.setVisible(true);
+
+                ((JFrame) SwingUtilities.getWindowAncestor(volver)).dispose();
             }
         });
     }

@@ -41,6 +41,8 @@ public class Profesor {
 
                         break;
                 }
+
+                ((JFrame) SwingUtilities.getWindowAncestor(reservar)).dispose();
             }
         });
     }

@@ -22,6 +22,8 @@ public class Administrador {
                 frame.setLocationRelativeTo(null);
                 frame.setVisible(true);
 
+                ((JFrame) SwingUtilities.getWindowAncestor(usuarios)).dispose();
+
             }
         });
         laboratorios.addActionListener(new ActionListener() {
@@ -33,6 +35,8 @@ public class Administrador {
                 frame.pack();
                 frame.setLocationRelativeTo(null);
                 frame.setVisible(true);
+
+                ((JFrame) SwingUtilities.getWindowAncestor(laboratorios)).dispose();
             }
         });
         aulas.addActionListener(new ActionListener() {
@@ -44,6 +48,8 @@ public class Administrador {
                 frame.pack();
                 frame.setLocationRelativeTo(null);
                 frame.setVisible(true);
+
+                ((JFrame) SwingUtilities.getWindowAncestor(aulas)).dispose();
             }
         });
     }

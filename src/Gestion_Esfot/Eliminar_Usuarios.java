@@ -84,6 +84,8 @@ public class Eliminar_Usuarios {
 
                         break;
                 }
+
+                ((JFrame) SwingUtilities.getWindowAncestor(eliminar)).dispose();
             }
         });
         volver.addActionListener(new ActionListener() {
@@ -95,6 +97,8 @@ public class Eliminar_Usuarios {
                 frame.pack();
                 frame.setLocationRelativeTo(null);
                 frame.setVisible(true);
+
+                ((JFrame) SwingUtilities.getWindowAncestor(volver)).dispose();
             }
         });
     }

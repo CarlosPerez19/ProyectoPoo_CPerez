@@ -49,7 +49,11 @@ public class Registro_Laboratorios_Admin {
                     collection.insertOne(documents);
                     System.out.println("Documento insertado con éxito");
 
+                } catch (Exception ex) {
+                    JOptionPane.showMessageDialog(null, "Error de conexion");
                 }
+
+                ((JFrame) SwingUtilities.getWindowAncestor(registrar)).dispose();
             }
         });
         volver.addActionListener(new ActionListener() {
@@ -61,6 +65,8 @@ public class Registro_Laboratorios_Admin {
                 frame.pack();
                 frame.setLocationRelativeTo(null);
                 frame.setVisible(true);
+
+                ((JFrame) SwingUtilities.getWindowAncestor(volver)).dispose();
             }
         });
     }
