@@ -20,6 +20,7 @@ public class Laboratorios {
                 frame.setContentPane(new Registro_Laboratorios_Admin().mainPanel);
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 frame.pack();
+                frame.setSize(900, 800);
                 frame.setLocationRelativeTo(null);
                 frame.setVisible(true);
 
@@ -34,6 +35,7 @@ public class Laboratorios {
                 frame.setContentPane(new Eliminar_Laboratorios().mainPanel);
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 frame.pack();
+                frame.setSize(900, 800);
                 frame.setLocationRelativeTo(null);
                 frame.setVisible(true);
 
@@ -48,6 +50,7 @@ public class Laboratorios {
                 frame.setContentPane(new Buscar_Laboratorios().mainPanel);
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 frame.pack();
+                frame.setSize(900, 800);
                 frame.setLocationRelativeTo(null);
                 frame.setVisible(true);
 
@@ -61,6 +64,7 @@ public class Laboratorios {
                 frame.setContentPane(new Actualizar_Laboratorios().mainPanel);
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 frame.pack();
+                frame.setSize(900, 800);
                 frame.setLocationRelativeTo(null);
                 frame.setVisible(true);
 
@@ -74,6 +78,7 @@ public class Laboratorios {
                 frame.setContentPane(new Administrador().mainPanel);
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 frame.pack();
+                frame.setSize(900, 800);
                 frame.setLocationRelativeTo(null);
                 frame.setVisible(true);
 

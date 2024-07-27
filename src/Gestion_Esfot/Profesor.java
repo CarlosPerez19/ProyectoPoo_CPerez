@@ -26,6 +26,7 @@ public class Profesor {
                         frame.setContentPane(new Reserva_Laboratorios().mainPanel);
                         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                         frame.pack();
+                        frame.setSize(900, 800);
                         frame.setLocationRelativeTo(null);
                         frame.setVisible(true);
 
@@ -36,6 +37,7 @@ public class Profesor {
                         frame2.setContentPane(new Reservas_Aulas().mainPanel);
                         frame2.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                         frame2.pack();
+                        frame2.setSize(900, 800);
                         frame2.setLocationRelativeTo(null);
                         frame2.setVisible(true);
 

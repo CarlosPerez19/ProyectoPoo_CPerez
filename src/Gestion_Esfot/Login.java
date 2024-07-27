@@ -23,6 +23,7 @@ public class Login {
                 frame.setContentPane(new Registrar_UsuariosForm().mainPanel);
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 frame.pack();
+                frame.setSize(900, 800);
                 frame.setLocationRelativeTo(null);
                 frame.setVisible(true);
             }
@@ -48,7 +49,7 @@ public class Login {
                             boolean usuarioValido = false;
 
                             String usuarioIngresado = usuario.getText();
-                            String contraseniaIngresada = contrasenia.getText();
+                            String contraseniaIngresada = new String(contrasenia.getPassword());
 
                             for (Document documento : documentos) {
                                 String busquedaUsuario = documento.getString("Usuario");
@@ -72,6 +73,7 @@ public class Login {
                         frame.setContentPane(new Administrador().mainPanel);
                         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                         frame.pack();
+                        frame.setSize(900, 800);
                         frame.setLocationRelativeTo(null);
                         frame.setVisible(true);
 
@@ -109,6 +111,7 @@ public class Login {
                             frame2.setContentPane(new Profesor().mainPanel);
                             frame2.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                             frame2.pack();
+                            frame2.setSize(900, 800);
                             frame2.setLocationRelativeTo(null);
                             frame2.setVisible(true);
 
@@ -145,17 +148,20 @@ public class Login {
                                 JOptionPane.showMessageDialog(null, "Usuario y Contraseña Incorrectos");
                             }
 
+                            JFrame frame3 = new JFrame();
+                            frame3.setContentPane(new Reservas_Aulas().mainPanel);
+                            frame3.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                            frame3.pack();
+                            frame3.setSize(900, 800);
+                            frame3.setLocationRelativeTo(null);
+                            frame3.setVisible(true);
+
+                        } catch (Exception ex) {
+                            JOptionPane.showMessageDialog(null, "Error al conectar");
+                            ex.printStackTrace();
                         }
 
-                        JFrame frame3 = new JFrame();
-                        frame3.setContentPane(new Reservas_Aulas().mainPanel);
-                        frame3.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                        frame3.pack();
-                        frame3.setLocationRelativeTo(null);
-                        frame3.setVisible(true);
-
                         break;
-
                 }
             }
         });

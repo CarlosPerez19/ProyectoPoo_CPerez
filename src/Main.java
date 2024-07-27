@@ -8,6 +8,7 @@ public class Main {
         frame.setContentPane(new Login().mainPanel);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
+        frame.setSize(900, 800);
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
 

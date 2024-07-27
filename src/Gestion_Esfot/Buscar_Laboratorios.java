@@ -62,6 +62,7 @@ public class Buscar_Laboratorios {
                 frame.setContentPane(new Laboratorios().mainPanel);
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 frame.pack();
+                frame.setSize(900, 800);
                 frame.setLocationRelativeTo(null);
                 frame.setVisible(true);
 

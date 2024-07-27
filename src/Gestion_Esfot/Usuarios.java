@@ -21,6 +21,7 @@ public class Usuarios {
                 frame.setContentPane(new Registro().mainPanel);
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 frame.pack();
+                frame.setSize(900, 800);
                 frame.setLocationRelativeTo(null);
                 frame.setVisible(true);
 
@@ -36,6 +37,7 @@ public class Usuarios {
                 frame.setContentPane(new Buscar_Usuarios().mainPanel);
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 frame.pack();
+                frame.setSize(900, 800);
                 frame.setLocationRelativeTo(null);
                 frame.setVisible(true);
 
@@ -50,6 +52,7 @@ public class Usuarios {
                 frame.setContentPane(new Eliminar_Usuarios().mainPanel);
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 frame.pack();
+                frame.setSize(900, 800);
                 frame.setLocationRelativeTo(null);
                 frame.setVisible(true);
 
@@ -63,6 +66,7 @@ public class Usuarios {
                 frame.setContentPane(new Actualizar_Usuarios().mainPanel);
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 frame.pack();
+                frame.setSize(900, 800);
                 frame.setLocationRelativeTo(null);
                 frame.setVisible(true);
 
@@ -77,6 +81,7 @@ public class Usuarios {
                 frame.setContentPane(new Administrador().mainPanel);
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 frame.pack();
+                frame.setSize(900, 800);
                 frame.setLocationRelativeTo(null);
                 frame.setVisible(true);
 

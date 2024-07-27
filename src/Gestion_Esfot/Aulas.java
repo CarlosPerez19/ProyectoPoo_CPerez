@@ -22,6 +22,7 @@ public class Aulas {
                 frame.setContentPane(new Registro_Aulas_Admin().mainPanel);
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 frame.pack();
+                frame.setSize(900, 800);
                 frame.setLocationRelativeTo(null);
                 frame.setVisible(true);
 
@@ -36,6 +37,7 @@ public class Aulas {
                 frame.setContentPane(new Eliminar_Aula().mainPanel);
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 frame.pack();
+                frame.setSize(900, 800);
                 frame.setLocationRelativeTo(null);
                 frame.setVisible(true);
 
@@ -50,6 +52,7 @@ public class Aulas {
                 frame.setContentPane(new Buscar_Aula().mainPanel);
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 frame.pack();
+                frame.setSize(900, 800);
                 frame.setLocationRelativeTo(null);
                 frame.setVisible(true);
 
@@ -64,6 +67,7 @@ public class Aulas {
                 frame.setContentPane(new Actualizar_Aulas().mainPanel);
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 frame.pack();
+                frame.setSize(900, 800);
                 frame.setLocationRelativeTo(null);
                 frame.setVisible(true);
 
@@ -78,6 +82,7 @@ public class Aulas {
                 frame.setContentPane(new Administrador().mainPanel);
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 frame.pack();
+                frame.setSize(900, 800);
                 frame.setLocationRelativeTo(null);
                 frame.setVisible(true);
 

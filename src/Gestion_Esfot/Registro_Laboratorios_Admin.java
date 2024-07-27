@@ -63,6 +63,7 @@ public class Registro_Laboratorios_Admin {
                 frame.setContentPane(new Laboratorios().mainPanel);
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 frame.pack();
+                frame.setSize(900, 800);
                 frame.setLocationRelativeTo(null);
                 frame.setVisible(true);
 
