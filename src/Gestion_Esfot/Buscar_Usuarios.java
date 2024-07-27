@@ -13,8 +13,14 @@ public class Buscar_Usuarios {
     public JPanel mainPanel;
     private JComboBox rol;
     private JButton volver;
+    private JLabel image;
 
     public Buscar_Usuarios() {
+
+        ImageIcon icon = new ImageIcon("src/img/logo_esfot_buho.png");
+        icon = new ImageIcon(icon.getImage().getScaledInstance(200, 100, java.awt.Image.SCALE_SMOOTH));
+        image.setIcon(icon);
+
         buscar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

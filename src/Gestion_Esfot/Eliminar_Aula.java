@@ -16,8 +16,14 @@ public class Eliminar_Aula {
     private JButton eliminar;
     public JPanel mainPanel;
     private JButton volver;
+    private JLabel image;
 
     public Eliminar_Aula() {
+
+        ImageIcon icon = new ImageIcon("src/img/logo_esfot_buho.png");
+        icon = new ImageIcon(icon.getImage().getScaledInstance(200, 100, java.awt.Image.SCALE_SMOOTH));
+        image.setIcon(icon);
+
         eliminar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

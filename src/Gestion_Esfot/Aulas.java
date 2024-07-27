@@ -11,8 +11,18 @@ public class Aulas {
     public JPanel mainPanel;
     private JButton actualizar;
     private JButton volver;
+    private JLabel image;
+    private JLabel admin;
 
     public Aulas() {
+
+        ImageIcon icon = new ImageIcon("src/img/logo_esfot_buho.png");
+        icon = new ImageIcon(icon.getImage().getScaledInstance(200, 100, java.awt.Image.SCALE_SMOOTH));
+        image.setIcon(icon);
+
+        ImageIcon icon2 = new ImageIcon("src/img/administrador.png");
+        icon2 = new ImageIcon(icon2.getImage().getScaledInstance(80, 80, java.awt.Image.SCALE_SMOOTH));
+        admin.setIcon(icon2);
 
         registrar.addActionListener(new ActionListener() {
             @Override

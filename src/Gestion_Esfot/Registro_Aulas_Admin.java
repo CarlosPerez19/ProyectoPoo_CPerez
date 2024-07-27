@@ -18,8 +18,14 @@ public class Registro_Aulas_Admin {
     public JPanel mainPanel;
     private JTextField bancas_aula;
     private JButton volver;
+    private JLabel image;
 
     public Registro_Aulas_Admin() {
+
+        ImageIcon icon = new ImageIcon("src/img/logo_esfot_buho.png");
+        icon = new ImageIcon(icon.getImage().getScaledInstance(200, 100, java.awt.Image.SCALE_SMOOTH));
+        image.setIcon(icon);
+
         registrar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

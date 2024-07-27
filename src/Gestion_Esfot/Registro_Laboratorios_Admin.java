@@ -19,9 +19,15 @@ public class Registro_Laboratorios_Admin {
     public JPanel mainPanel;
     private JTextField codigo_lab;
     private JButton volver;
+    private JLabel image;
 
 
     public Registro_Laboratorios_Admin() {
+
+        ImageIcon icon = new ImageIcon("src/img/logo_esfot_buho.png");
+        icon = new ImageIcon(icon.getImage().getScaledInstance(200, 100, java.awt.Image.SCALE_SMOOTH));
+        image.setIcon(icon);
+
         registrar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

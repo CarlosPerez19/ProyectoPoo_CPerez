@@ -14,8 +14,14 @@ public class Login {
     private JButton iniciarSesion;
     private JButton registrarseButton;
     private JComboBox rol;
+    private JLabel image;
 
     public Login() {
+
+        ImageIcon icon = new ImageIcon("src/img/logo_esfot_buho.png");
+        icon = new ImageIcon(icon.getImage().getScaledInstance(200, 100, java.awt.Image.SCALE_SMOOTH));
+        image.setIcon(icon);
+
         registrarseButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

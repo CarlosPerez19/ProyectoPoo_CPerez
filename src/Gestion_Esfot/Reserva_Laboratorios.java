@@ -21,8 +21,19 @@ public class Reserva_Laboratorios {
     public JPanel mainPanel;
     private JTextField num_dia;
     private JButton volver;
+    private JLabel image;
+    private JLabel labos;
 
     public Reserva_Laboratorios() {
+
+        ImageIcon icon = new ImageIcon("src/img/logo_esfot_buho.png");
+        icon = new ImageIcon(icon.getImage().getScaledInstance(200, 100, java.awt.Image.SCALE_SMOOTH));
+        image.setIcon(icon);
+
+        ImageIcon icon2 = new ImageIcon("src/img/laboratorios.jpg");
+        icon2 = new ImageIcon(icon2.getImage().getScaledInstance(100, 100, java.awt.Image.SCALE_SMOOTH));
+        labos.setIcon(icon2);
+
         reservar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -99,6 +110,7 @@ public class Reserva_Laboratorios {
                 frame.setContentPane(new Profesor().mainPanel);
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 frame.pack();
+                frame.setSize(900, 800);
                 frame.setLocationRelativeTo(null);
                 frame.setVisible(true);
 

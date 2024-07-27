@@ -21,8 +21,14 @@ public class Registro extends Registro_Usuarios {
     public JPanel mainPanel;
     private JTextField cedula;
     private JButton volver;
+    private JLabel image;
 
     public Registro() {
+
+        ImageIcon icon = new ImageIcon("src/img/logo_esfot_buho.png");
+        icon = new ImageIcon(icon.getImage().getScaledInstance(200, 100, java.awt.Image.SCALE_SMOOTH));
+        image.setIcon(icon);
+
         registro.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

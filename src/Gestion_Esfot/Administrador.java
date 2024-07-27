@@ -9,9 +9,20 @@ public class Administrador {
     private JButton laboratorios;
     private JButton aulas;
     public JPanel mainPanel;
+    private JLabel image;
+    private JLabel admin;
 
 
     public Administrador() {
+
+        ImageIcon icon = new ImageIcon("src/img/logo_esfot_buho.png");
+        icon = new ImageIcon(icon.getImage().getScaledInstance(200, 100, java.awt.Image.SCALE_SMOOTH));
+        image.setIcon(icon);
+
+        ImageIcon icon2 = new ImageIcon("src/img/administrador.png");
+        icon2 = new ImageIcon(icon2.getImage().getScaledInstance(80, 80, java.awt.Image.SCALE_SMOOTH));
+        admin.setIcon(icon2);
+
         usuarios.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

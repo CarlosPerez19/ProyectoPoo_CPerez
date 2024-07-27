@@ -8,8 +8,19 @@ public class Profesor {
     private JComboBox seleccion_reserva;
     private JButton reservar;
     public JPanel mainPanel;
+    private JLabel profesor;
+    private JLabel image;
 
     public Profesor() {
+
+        ImageIcon icon = new ImageIcon("src/img/logo_esfot_buho.png");
+        icon = new ImageIcon(icon.getImage().getScaledInstance(200, 100, java.awt.Image.SCALE_SMOOTH));
+        image.setIcon(icon);
+
+        ImageIcon icon2 = new ImageIcon("src/img/profesor.png");
+        icon2 = new ImageIcon(icon2.getImage().getScaledInstance(80, 80, java.awt.Image.SCALE_SMOOTH));
+        profesor.setIcon(icon2);
+
         reservar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

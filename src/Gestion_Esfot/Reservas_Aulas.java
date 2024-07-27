@@ -20,8 +20,19 @@ public class Reservas_Aulas {
     private JTextField hora_fin;
     private JTextField cedula;
     public JPanel mainPanel;
+    private JLabel image;
+    private JLabel aulas;
 
     public Reservas_Aulas() {
+
+        ImageIcon icon = new ImageIcon("src/img/logo_esfot_buho.png");
+        icon = new ImageIcon(icon.getImage().getScaledInstance(200, 100, java.awt.Image.SCALE_SMOOTH));
+        image.setIcon(icon);
+
+        ImageIcon icon2 = new ImageIcon("src/img/aulas.jpg");
+        icon2 = new ImageIcon(icon2.getImage().getScaledInstance(100, 100, java.awt.Image.SCALE_SMOOTH));
+        aulas.setIcon(icon2);
+
         reservar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

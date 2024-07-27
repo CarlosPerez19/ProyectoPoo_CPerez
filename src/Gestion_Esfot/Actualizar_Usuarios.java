@@ -19,8 +19,14 @@ public class Actualizar_Usuarios {
     private JComboBox actulizar_element;
     private JTextField actualizacion;
     private JButton volver;
+    private JLabel image;
 
     public Actualizar_Usuarios() {
+
+        ImageIcon icon = new ImageIcon("src/img/logo_esfot_buho.png");
+        icon = new ImageIcon(icon.getImage().getScaledInstance(200, 100, java.awt.Image.SCALE_SMOOTH));
+        image.setIcon(icon);
+
         actualizar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
