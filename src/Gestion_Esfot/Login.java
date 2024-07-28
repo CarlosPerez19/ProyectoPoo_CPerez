@@ -55,7 +55,7 @@ public class Login {
                             boolean usuarioValido = false;
 
                             String usuarioIngresado = usuario.getText();
-                            String contraseniaIngresada = new String(contrasenia.getPassword());
+                            String contraseniaIngresada = Encriptar.generateHash(contrasenia.getText());
 
                             for (Document documento : documentos) {
                                 String busquedaUsuario = documento.getString("Usuario");
@@ -95,7 +95,7 @@ public class Login {
                             boolean usuarioValido = false;
 
                             String usuarioIngresado = usuario.getText();
-                            String contraseniaIngresada = contrasenia.getText();
+                            String contraseniaIngresada = Encriptar.generateHash(contrasenia.getText());
 
                             for (Document documento : documentos) {
                                 String busquedaUsuario = documento.getString("Usuario");
@@ -136,7 +136,7 @@ public class Login {
                             boolean usuarioValido = false;
 
                             String usuarioIngresado = usuario.getText();
-                            String contraseniaIngresada = contrasenia.getText();
+                            String contraseniaIngresada = Encriptar.generateHash(contrasenia.getText());
 
                             for (Document documento : documentos) {
                                 String busquedaUsuario = documento.getString("Usuario");

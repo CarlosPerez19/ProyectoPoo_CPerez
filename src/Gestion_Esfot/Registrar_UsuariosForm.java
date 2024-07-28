@@ -53,7 +53,8 @@ public class Registrar_UsuariosForm {
                         usuario.setApellido(apellido.getText());
                         usuario.setEdad(Integer.parseInt(edad.getText()));
                         usuario.setUsuario(user.getText());
-                        usuario.setContrasenia(contrasenia.getText());
+                        String ContraseniaEncriptada = Encriptar.generateHash(contrasenia.getText());
+                        usuario.setContrasenia(ContraseniaEncriptada);
 
                         try (MongoClient mongoClient = MongoClients.create("mongodb+srv://carlos:1234@proyectopoo.powzq9l.mongodb.net/ProyectoPoo")){
                             MongoDatabase database = mongoClient.getDatabase("ProyectoPoo");
@@ -79,7 +80,8 @@ public class Registrar_UsuariosForm {
                         usuario2.setApellido(apellido.getText());
                         usuario2.setEdad(Integer.parseInt(edad.getText()));
                         usuario2.setUsuario(user.getText());
-                        usuario2.setContrasenia(contrasenia.getText());
+                        String ContraseniaEncriptada2 = Encriptar.generateHash(contrasenia.getText());
+                        usuario2.setContrasenia(ContraseniaEncriptada2);
 
                         try (MongoClient mongoClient = MongoClients.create("mongodb+srv://carlos:1234@proyectopoo.powzq9l.mongodb.net/ProyectoPoo")){
                             MongoDatabase database = mongoClient.getDatabase("ProyectoPoo");

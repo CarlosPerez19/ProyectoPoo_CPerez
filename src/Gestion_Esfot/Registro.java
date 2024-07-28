@@ -46,7 +46,8 @@ public class Registro extends Registro_Usuarios {
                         user.setApellido(apellido.getText());
                         user.setEdad(Integer.parseInt(edad.getText()));
                         user.setUsuario(usuario.getText());
-                        user.setContrasenia(contrasenia.getText());
+                        String contraseniaEncriptada = Encriptar.generateHash(contrasenia.getText());
+                        user.setContrasenia(contraseniaEncriptada);
 
                         try (MongoClient mongoClient = MongoClients.create("mongodb+srv://carlos:1234@proyectopoo.powzq9l.mongodb.net/ProyectoPoo")) {
                             MongoDatabase database = mongoClient.getDatabase("ProyectoPoo");
@@ -70,7 +71,8 @@ public class Registro extends Registro_Usuarios {
                         user2.setApellido(apellido.getText());
                         user2.setEdad(Integer.parseInt(edad.getText()));
                         user2.setUsuario(usuario.getText());
-                        user2.setContrasenia(contrasenia.getText());
+                        String contraseniaEncriptada2 = Encriptar.generateHash(contrasenia.getText());
+                        user2.setContrasenia(contraseniaEncriptada2);
 
                         try (MongoClient mongoClient = MongoClients.create("mongodb+srv://carlos:1234@proyectopoo.powzq9l.mongodb.net/ProyectoPoo")) {
                             MongoDatabase database = mongoClient.getDatabase("ProyectoPoo");
@@ -94,7 +96,9 @@ public class Registro extends Registro_Usuarios {
                         user3.setApellido(apellido.getText());
                         user3.setEdad(Integer.parseInt(edad.getText()));
                         user3.setUsuario(usuario.getText());
-                        user3.setContrasenia(contrasenia.getText());
+                        String contraseniaEncriptada3 = Encriptar.generateHash(contrasenia.getText());
+                        user3.setContrasenia(contraseniaEncriptada3);
+
 
                         try (MongoClient mongoClient = MongoClients.create("mongodb+srv://carlos:1234@proyectopoo.powzq9l.mongodb.net/ProyectoPoo")) {
                             MongoDatabase database = mongoClient.getDatabase("ProyectoPoo");
