@@ -1,5 +1,6 @@
 package Gestion_Esfot;
 
+import com.mongodb.MongoWriteException;
 import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoClients;
 import com.mongodb.client.MongoCollection;
@@ -61,6 +62,13 @@ public class Registro extends Registro_Usuarios {
                             collection.insertOne(documents);
                             System.out.println("Documento insertado con éxito");
 
+                        } catch (MongoWriteException ex) {
+                            if (ex.getError().getCategory().equals(com.mongodb.ErrorCategory.DUPLICATE_KEY)) {
+                                JOptionPane.showMessageDialog(null, "Usuario o cédula ya registrados");
+                            } else {
+                                ex.printStackTrace();
+                                JOptionPane.showMessageDialog(null, "Error al insertar documento");
+                            }
                         }
                         break;
 
@@ -86,6 +94,13 @@ public class Registro extends Registro_Usuarios {
                             collection.insertOne(documents);
                             System.out.println("Documento insertado con éxito");
 
+                        }catch (MongoWriteException ex) {
+                            if (ex.getError().getCategory().equals(com.mongodb.ErrorCategory.DUPLICATE_KEY)) {
+                                JOptionPane.showMessageDialog(null, "Usuario o cédula ya registrados");
+                            } else {
+                                ex.printStackTrace();
+                                JOptionPane.showMessageDialog(null, "Error al insertar documento");
+                            }
                         }
                         break;
 
@@ -112,6 +127,13 @@ public class Registro extends Registro_Usuarios {
                             collection.insertOne(documents);
                             System.out.println("Documento insertado con éxito");
 
+                        } catch (MongoWriteException ex) {
+                            if (ex.getError().getCategory().equals(com.mongodb.ErrorCategory.DUPLICATE_KEY)) {
+                                JOptionPane.showMessageDialog(null, "Usuario o cédula ya registrados");
+                            } else {
+                                ex.printStackTrace();
+                                JOptionPane.showMessageDialog(null, "Error al insertar documento");
+                            }
                         }
                         break;
                 }

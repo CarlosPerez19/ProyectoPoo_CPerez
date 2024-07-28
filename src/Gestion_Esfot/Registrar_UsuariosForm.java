@@ -1,5 +1,6 @@
 package Gestion_Esfot;
 
+import com.mongodb.MongoWriteException;
 import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoClients;
 import com.mongodb.client.MongoCollection;
@@ -67,9 +68,13 @@ public class Registrar_UsuariosForm {
                                     .append("Cedula", usuario.getCedula());
                             collection.insertOne(documents);
                             JOptionPane.showMessageDialog(null, "Usuario registrado correctamente");
-                        } catch (Exception ex) {
-                            JOptionPane.showMessageDialog(null, "Error al registrar el usuario");
-                            ex.printStackTrace();
+                        } catch (MongoWriteException ex) {
+                            if (ex.getError().getCategory().equals(com.mongodb.ErrorCategory.DUPLICATE_KEY)) {
+                                JOptionPane.showMessageDialog(null, "Usuario o cédula ya registrados");
+                            } else {
+                                ex.printStackTrace();
+                                JOptionPane.showMessageDialog(null, "Error al insertar documento");
+                            }
                         }
                         break;
 
@@ -94,9 +99,13 @@ public class Registrar_UsuariosForm {
                                     .append("Cedula", usuario2.getCedula());
                             collection.insertOne(documents);
                             JOptionPane.showMessageDialog(null, "Usuario registrado correctamente");
-                        } catch (Exception ex) {
-                            JOptionPane.showMessageDialog(null, "Error al registrar el usuario");
-                            ex.printStackTrace();
+                        } catch (MongoWriteException ex) {
+                            if (ex.getError().getCategory().equals(com.mongodb.ErrorCategory.DUPLICATE_KEY)) {
+                                JOptionPane.showMessageDialog(null, "Usuario o cédula ya registrados");
+                            } else {
+                                ex.printStackTrace();
+                                JOptionPane.showMessageDialog(null, "Error al insertar documento");
+                            }
                         }
                         break;
                 }
