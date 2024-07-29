@@ -12,6 +12,9 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * Clase que maneja la gestion para la reserva de laboratorios
+ */
 public class Reserva_Laboratorios {
     private JTextField codigo_lab;
     private JTextField hora_inicio;
@@ -24,7 +27,12 @@ public class Reserva_Laboratorios {
     private JLabel image;
     private JLabel labos;
 
+    /**
+     * Constructor para la Reserva de laboratorios
+     */
     public Reserva_Laboratorios() {
+
+        // Imagenes que pareceran dentro del frame
 
         ImageIcon icon = new ImageIcon("src/img/logo_esfot_buho.png");
         icon = new ImageIcon(icon.getImage().getScaledInstance(200, 100, java.awt.Image.SCALE_SMOOTH));
@@ -34,19 +42,27 @@ public class Reserva_Laboratorios {
         icon2 = new ImageIcon(icon2.getImage().getScaledInstance(100, 100, java.awt.Image.SCALE_SMOOTH));
         labos.setIcon(icon2);
 
+        // Manejo del boton para realizar reservas
+
         reservar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+
+                // Validacion  de campos vacios
 
                 if (codigo_lab.getText().isEmpty() || hora_inicio.getText().isEmpty() || hora_fin.getText().isEmpty() || cedula.getText().isEmpty()) {
                     JOptionPane.showMessageDialog(null, "Llenar todos los campos");
                     return;
                 }
 
+                // Validacion del campo de cedula
+
                 if (cedula.getText().length() != 10) {
                     JOptionPane.showMessageDialog(null, "Cedula no valida");
                     return;
                 }
+
+                // Creacion y seteo del objeto con sus respectivas variables
 
                 Reservas reserva = new Reservas();
                 reserva.setCodigo(codigo_lab.getText());
@@ -55,11 +71,14 @@ public class Reserva_Laboratorios {
                 reserva.setDia(Integer.parseInt(num_dia.getText()));
                 reserva.setCedula(cedula.getText());
 
+                // Conexion a la base de datos y su respectiva colleccion
+
                 try (MongoClient mongoClient = MongoClients.create("mongodb+srv://carlos:1234@proyectopoo.powzq9l.mongodb.net/ProyectoPoo")) {
                     MongoDatabase database = mongoClient.getDatabase("ProyectoPoo");
                     MongoCollection<Document> collection = database.getCollection("Reservas");
 
                     // Construir la consulta para verificar si ya existe una reserva en el mismo horario
+
                     Bson query = Filters.and(
                             Filters.eq("Codigo", reserva.getCodigo()),
                             Filters.eq("Dia", reserva.getDia()),
@@ -81,6 +100,8 @@ public class Reserva_Laboratorios {
 
                     long count = collection.countDocuments(query);
 
+                    // Consulta para verificar si ya hay una reserva existente en el mismo horario
+
                     if (count > 0) {
                         JOptionPane.showMessageDialog(null, "Ya existe una reserva para este horario");
                     } else {
@@ -100,9 +121,13 @@ public class Reserva_Laboratorios {
                     ex.printStackTrace();
                 }
 
+                // Cierre del frame actual
                 ((JFrame) SwingUtilities.getWindowAncestor(reservar)).dispose();
             }
         });
+
+        // Manejo del boton volver, permite volver al frame anterior
+
         volver.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -114,6 +139,7 @@ public class Reserva_Laboratorios {
                 frame.setLocationRelativeTo(null);
                 frame.setVisible(true);
 
+                // Cierre de la ventana actual
                 ((JFrame) SwingUtilities.getWindowAncestor(volver)).dispose();
             }
         });

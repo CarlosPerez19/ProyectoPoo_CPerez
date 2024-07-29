@@ -12,6 +12,10 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * Manejo de la clase de reserva de aulas
+ */
+
 public class Reservas_Aulas {
     private JTextField codigo_aula;
     private JTextField dia;
@@ -23,7 +27,13 @@ public class Reservas_Aulas {
     private JLabel image;
     private JLabel aulas;
 
+    /**
+     * Contrusctor de la clase de reserva de aulas
+     */
+
     public Reservas_Aulas() {
+
+        // Inicializacion de las respectivas imagenes que se mostraran en el frame
 
         ImageIcon icon = new ImageIcon("src/img/logo_esfot_buho.png");
         icon = new ImageIcon(icon.getImage().getScaledInstance(200, 100, java.awt.Image.SCALE_SMOOTH));
@@ -33,19 +43,27 @@ public class Reservas_Aulas {
         icon2 = new ImageIcon(icon2.getImage().getScaledInstance(100, 100, java.awt.Image.SCALE_SMOOTH));
         aulas.setIcon(icon2);
 
+        // Manejo del boton para la reserva de aulas
+
         reservar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+
+                //  Control de campos vacios
 
                 if (codigo_aula.getText().isEmpty() || cedula.getText().isEmpty() || dia.getText().isEmpty() || hora_inicio.getText().isEmpty()) {
                     JOptionPane.showMessageDialog(null, "Llene todos los campos");
                     return;
                 }
 
+                // Validacion de ingreso de cedula
+
                 if (cedula.getText().length() != 10) {
                     JOptionPane.showMessageDialog(null, "Ingrese una cedula valida");
                     return;
                 }
+
+                // Creacion y seteo de un objeto con sus respectivas variables
 
                 Reservas reserva = new Reservas();
                 reserva.setCodigo(codigo_aula.getText());
@@ -53,6 +71,8 @@ public class Reservas_Aulas {
                 reserva.setHora_fin(Integer.parseInt(hora_fin.getText()));
                 reserva.setDia(Integer.parseInt(dia.getText()));
                 reserva.setCedula(cedula.getText());
+
+                // Conexion con la base de datos y su respectiva colleccion
 
                 try (MongoClient mongoClient = MongoClients.create("mongodb+srv://carlos:1234@proyectopoo.powzq9l.mongodb.net/ProyectoPoo")) {
                     MongoDatabase database = mongoClient.getDatabase("ProyectoPoo");
@@ -83,7 +103,9 @@ public class Reservas_Aulas {
                     if (count > 0) {
                         JOptionPane.showMessageDialog(null, "Ya existe una reserva para este horario");
                     } else {
+
                         // Insertar la nueva reserva si no hay conflicto
+
                         Document documents = new Document("Cedula", reserva.getCedula())
                                 .append("Codigo", reserva.getCodigo())
                                 .append("Dia", reserva.getDia())
@@ -98,6 +120,8 @@ public class Reservas_Aulas {
                     JOptionPane.showMessageDialog(null, "Error al insertar Documento");
                     ex.printStackTrace();
                 }
+
+                // Cierre del frame actual
 
                 ((JFrame) SwingUtilities.getWindowAncestor(reservar)).dispose();
             }

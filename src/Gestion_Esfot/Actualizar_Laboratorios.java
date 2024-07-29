@@ -11,6 +11,9 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * Clase para actualizar registros de laboratorios
+ */
 public class Actualizar_Laboratorios {
     private JTextField codigo_lab;
     private JComboBox actualizar_element;
@@ -20,22 +23,31 @@ public class Actualizar_Laboratorios {
     private JButton volver;
     private JLabel image;
 
+    /**
+     * Constructor de la clase actualizar laboratorios
+     */
+
     public Actualizar_Laboratorios() {
 
+        // Imagen del frame
         ImageIcon icon = new ImageIcon("src/img/logo_esfot_buho.png");
         icon = new ImageIcon(icon.getImage().getScaledInstance(200, 100, java.awt.Image.SCALE_SMOOTH));
         image.setIcon(icon);
 
+        // Boton para actualizar registros
         actualizar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
 
+                // Conexion con la base de datos e ingreso a la coleccion de laboratorios
                 try (MongoClient mongoClient = MongoClients.create("mongodb+srv://carlos:1234@proyectopoo.powzq9l.mongodb.net/ProyectoPoo")) {
-
                     MongoDatabase database = mongoClient.getDatabase("ProyectoPoo");
                     MongoCollection<Document> collection = database.getCollection("Laboratorios");
+
+                    // Variable de busqueda
                     String lab_actualizar = codigo_lab.getText();
 
+                    // Actualizacion segun la seleccion del usuario
                     switch (actualizar_element.getSelectedIndex()) {
                         case 1:
                             Document filtro = new Document("Codigo Lab", lab_actualizar);
@@ -75,9 +87,12 @@ public class Actualizar_Laboratorios {
                     JOptionPane.showMessageDialog(null, "Error al actualizar el laboratorio");
                 }
 
+                // Cierre del frame
                 ((JFrame) SwingUtilities.getWindowAncestor(actualizar)).dispose();
             }
         });
+
+        // Boton para volver al frame anterior
         volver.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -89,6 +104,7 @@ public class Actualizar_Laboratorios {
                 frame.setLocationRelativeTo(null);
                 frame.setVisible(true);
 
+                // Cierre del frame
                 ((JFrame) SwingUtilities.getWindowAncestor(volver)).dispose();
             }
         });

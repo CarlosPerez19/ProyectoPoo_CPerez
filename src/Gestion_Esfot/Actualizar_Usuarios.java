@@ -11,6 +11,10 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * Clase para actualizar usuarios registrados
+ */
+
 public class Actualizar_Usuarios {
     private JTextField cedula;
     private JButton actualizar;
@@ -21,35 +25,48 @@ public class Actualizar_Usuarios {
     private JButton volver;
     private JLabel image;
 
+    /**
+     * Constructor para la clase de actualizar usuarios
+     */
+
     public Actualizar_Usuarios() {
 
+        // Imagen que aparecera en el frame
         ImageIcon icon = new ImageIcon("src/img/logo_esfot_buho.png");
         icon = new ImageIcon(icon.getImage().getScaledInstance(200, 100, java.awt.Image.SCALE_SMOOTH));
         image.setIcon(icon);
 
+        //  Boton para actualizar registros de usuarios
         actualizar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
 
+                // Control de campos vacios
                 if (cedula.getText().isEmpty() || rol.getSelectedIndex() == 0) {
                     JOptionPane.showMessageDialog(null, "Llenar todos los campos");
                     return;
                 }
 
+                // Control de cedula
                 if (cedula.getText().length() != 10) {
                     JOptionPane.showMessageDialog(null, "Ingrese una cedula valida");
                     return;
                 }
 
+                // Ingreso segun la seleccion del usuario
                 switch (rol.getSelectedIndex()) {
 
                     case 1:
-                        try (MongoClient mongoClient = MongoClients.create("mongodb+srv://carlos:1234@proyectopoo.powzq9l.mongodb.net/ProyectoPoo")) {
 
+                        // Conexion con la base de datos e ingreso a la coleccion de administrador
+                        try (MongoClient mongoClient = MongoClients.create("mongodb+srv://carlos:1234@proyectopoo.powzq9l.mongodb.net/ProyectoPoo")) {
                             MongoDatabase database = mongoClient.getDatabase("ProyectoPoo");
                             MongoCollection<Document> collection = database.getCollection("Administrador");
+
+                            // Campo de actualizacion
                             String cedula_actualizar = cedula.getText();
 
+                            // Actualizacion de cualquier campo segun la seleccion del usuario
                             switch (actulizar_element.getSelectedIndex()) {
                                 case 1:
                                     Document filtro = new Document("Cedula", cedula_actualizar);
@@ -99,12 +116,16 @@ public class Actualizar_Usuarios {
                         break;
 
                     case 2:
-                        try (MongoClient mongoClient = MongoClients.create("mongodb+srv://carlos:1234@proyectopoo.powzq9l.mongodb.net/ProyectoPoo")) {
 
+                        // Conexion con la base de datos e ingreso a la coleccion de profesores
+                        try (MongoClient mongoClient = MongoClients.create("mongodb+srv://carlos:1234@proyectopoo.powzq9l.mongodb.net/ProyectoPoo")) {
                             MongoDatabase database = mongoClient.getDatabase("ProyectoPoo");
                             MongoCollection<Document> collection = database.getCollection("Profesor");
+
+                            // Variable de busqueda
                             String cedula_actualizar = cedula.getText();
 
+                            // Actualizacion segun la seleccion del usuario
                             switch (actulizar_element.getSelectedIndex()) {
                                 case 1:
                                     Document filtro = new Document("Cedula", cedula_actualizar);
@@ -154,12 +175,16 @@ public class Actualizar_Usuarios {
                         break;
 
                     case 3:
-                        try (MongoClient mongoClient = MongoClients.create("mongodb+srv://carlos:1234@proyectopoo.powzq9l.mongodb.net/ProyectoPoo")) {
 
+                        // Conexion con la base de datos e ingreso a la coleccion de estudiantes
+                        try (MongoClient mongoClient = MongoClients.create("mongodb+srv://carlos:1234@proyectopoo.powzq9l.mongodb.net/ProyectoPoo")) {
                             MongoDatabase database = mongoClient.getDatabase("ProyectoPoo");
                             MongoCollection<Document> collection = database.getCollection("Estudiante");
+
+                            // Variable de busqueda
                             String cedula_actualizar = cedula.getText();
 
+                            // Actualizacion por seleccion del usuario
                             switch (actulizar_element.getSelectedIndex()) {
                                 case 1:
                                     Document filtro = new Document("Cedula", cedula_actualizar);
@@ -208,10 +233,14 @@ public class Actualizar_Usuarios {
 
                         break;
                 }
+
+                // Cierre del frame
                 ((JFrame) SwingUtilities.getWindowAncestor(actualizar)).dispose();
 
             }
         });
+
+        // Boton para volver al frame anterior
         volver.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -223,6 +252,7 @@ public class Actualizar_Usuarios {
                 frame.setLocationRelativeTo(null);
                 frame.setVisible(true);
 
+                // Cierre del frame
                 ((JFrame) SwingUtilities.getWindowAncestor(volver)).dispose();
             }
         });

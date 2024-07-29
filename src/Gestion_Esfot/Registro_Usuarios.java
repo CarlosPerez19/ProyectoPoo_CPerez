@@ -1,6 +1,12 @@
 package Gestion_Esfot;
 
+/**
+ * Clase que representa los datos de un usuario en el sistema.
+ */
+
 public class Registro_Usuarios {
+
+    // Variables de recepcion
     String nombre;
     String apellido;
     int edad;
@@ -8,8 +14,23 @@ public class Registro_Usuarios {
     String contrasenia;
     String cedula;
 
+    /**
+     * Constructor por defecto.
+     */
+
     public Registro_Usuarios() {
     }
+
+    /**
+     * Constructor con parámetros para inicializar un usuario.
+     *
+     * @param nombre Nombre del usuario
+     * @param apellido Apellido del usuario
+     * @param edad Edad del usuario
+     * @param usuario Nombre de usuario para el acceso
+     * @param contrasenia Contraseña para el acceso
+     * @param cedula Cédula del usuario
+     */
 
     public Registro_Usuarios(String nombre, String apellido, int edad, String usuario, String contrasenia, String cedula) {
         this.nombre = nombre;
@@ -20,6 +41,10 @@ public class Registro_Usuarios {
         this.cedula = cedula;
     }
 
+    /**
+     * Getters y setters
+     * @return Setearan y devolveran las variables respectivas
+     */
     public String getNombre() {
         return nombre;
     }
