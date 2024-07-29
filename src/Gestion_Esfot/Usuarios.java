@@ -4,6 +4,10 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * Manejo de la clase usuarios para su respectiva gestion
+ */
+
 public class Usuarios {
     private JButton registrar;
     private JButton buscar;
@@ -14,7 +18,13 @@ public class Usuarios {
     private JLabel image;
     private JLabel admin;
 
+    /**
+     * Constructor de la clase usuarios, define los eventos para los botones
+     */
+
     public Usuarios() {
+
+        // Manejo de las imagenes respectivas que se mostraran en el frame
 
         ImageIcon icon = new ImageIcon("src/img/logo_esfot_buho.png");
         icon = new ImageIcon(icon.getImage().getScaledInstance(200, 100, java.awt.Image.SCALE_SMOOTH));
@@ -23,6 +33,8 @@ public class Usuarios {
         ImageIcon icon2 = new ImageIcon("src/img/administrador.png");
         icon2 = new ImageIcon(icon2.getImage().getScaledInstance(80, 80, java.awt.Image.SCALE_SMOOTH));
         admin.setIcon(icon2);
+
+        // Manejo del evento para registrar un usuario
 
         registrar.addActionListener(new ActionListener() {
             @Override
@@ -36,10 +48,14 @@ public class Usuarios {
                 frame.setLocationRelativeTo(null);
                 frame.setVisible(true);
 
+                // Cierra el frame actual
                 ((JFrame) SwingUtilities.getWindowAncestor(registrar)).dispose();
 
             }
         });
+
+        // Manejo de los eventos para buscar usuarios
+
         buscar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -52,9 +68,13 @@ public class Usuarios {
                 frame.setLocationRelativeTo(null);
                 frame.setVisible(true);
 
+                // Cierre del frame actual
                 ((JFrame) SwingUtilities.getWindowAncestor(buscar)).dispose();
             }
         });
+
+        // Manejo de envetos para eliminar un usuario
+
         eliminar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -67,9 +87,13 @@ public class Usuarios {
                 frame.setLocationRelativeTo(null);
                 frame.setVisible(true);
 
+                // Cierre del frame actual
                 ((JFrame) SwingUtilities.getWindowAncestor(eliminar)).dispose();
             }
         });
+
+        // Manejo de eventos para actualizar un usuario
+
         actualizar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -81,9 +105,13 @@ public class Usuarios {
                 frame.setLocationRelativeTo(null);
                 frame.setVisible(true);
 
+                // Cierre del frame actual
                 ((JFrame) SwingUtilities.getWindowAncestor(actualizar)).dispose();
             }
         });
+
+        // Evento para volver a la ventana anterior
+
         volver.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -96,6 +124,7 @@ public class Usuarios {
                 frame.setLocationRelativeTo(null);
                 frame.setVisible(true);
 
+                // Cierre del frame actual
                 ((JFrame) SwingUtilities.getWindowAncestor(volver)).dispose();
             }
         });

@@ -4,6 +4,9 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * Clase para la gestion de elementos por parte del administrador
+ */
 public class Administrador {
     private JButton usuarios;
     private JButton laboratorios;
@@ -12,9 +15,13 @@ public class Administrador {
     private JLabel image;
     private JLabel admin;
 
+    /**
+     * Constructor para la clase de administrador
+     */
 
     public Administrador() {
 
+        // Imagenes que apareceran en el frame
         ImageIcon icon = new ImageIcon("src/img/logo_esfot_buho.png");
         icon = new ImageIcon(icon.getImage().getScaledInstance(200, 100, java.awt.Image.SCALE_SMOOTH));
         image.setIcon(icon);
@@ -23,6 +30,7 @@ public class Administrador {
         icon2 = new ImageIcon(icon2.getImage().getScaledInstance(80, 80, java.awt.Image.SCALE_SMOOTH));
         admin.setIcon(icon2);
 
+        // Frame para gestionar usuarios
         usuarios.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -34,10 +42,13 @@ public class Administrador {
                 frame.setLocationRelativeTo(null);
                 frame.setVisible(true);
 
+                // Cierre de la ventana
                 ((JFrame) SwingUtilities.getWindowAncestor(usuarios)).dispose();
 
             }
         });
+
+        // Frame para gestionar laboratorios
         laboratorios.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -49,9 +60,12 @@ public class Administrador {
                 frame.setLocationRelativeTo(null);
                 frame.setVisible(true);
 
+                // Cierre del frame
                 ((JFrame) SwingUtilities.getWindowAncestor(laboratorios)).dispose();
             }
         });
+
+        // Frame para gestionar aulas
         aulas.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -63,6 +77,7 @@ public class Administrador {
                 frame.setLocationRelativeTo(null);
                 frame.setVisible(true);
 
+                // Cierre del frame
                 ((JFrame) SwingUtilities.getWindowAncestor(aulas)).dispose();
             }
         });

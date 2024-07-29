@@ -11,6 +11,10 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * Clase para actualizar registros de aulas
+ */
+
 public class Actualizar_Aulas {
     public JPanel mainPanel;
     private JTextField codigo_aula;
@@ -20,21 +24,32 @@ public class Actualizar_Aulas {
     private JButton volver;
     private JLabel image;
 
+    /**
+     * Constructor para la clase de actualizar aulas
+     */
+
     public Actualizar_Aulas() {
+
+        // Imagen del frame
 
         ImageIcon icon = new ImageIcon("src/img/logo_esfot_buho.png");
         icon = new ImageIcon(icon.getImage().getScaledInstance(200, 100, java.awt.Image.SCALE_SMOOTH));
         image.setIcon(icon);
 
+        // Boton para actualizar registros
         actualizar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                try (MongoClient mongoClient = MongoClients.create("mongodb+srv://carlos:1234@proyectopoo.powzq9l.mongodb.net/ProyectoPoo")) {
 
+                // Conexion con la base de datos e ingreso a la coleccion de aulas
+                try (MongoClient mongoClient = MongoClients.create("mongodb+srv://carlos:1234@proyectopoo.powzq9l.mongodb.net/ProyectoPoo")) {
                     MongoDatabase database = mongoClient.getDatabase("ProyectoPoo");
                     MongoCollection<Document> collection = database.getCollection("Aulas");
+
+                    // Variable de busqueda
                     String aula_actualizar = codigo_aula.getText();
 
+                    // Actualizacion por seleccion del usuario
                     switch (element_act.getSelectedIndex()) {
                         case 1:
                             Document filtro = new Document("Codigo Aula", aula_actualizar);
@@ -65,9 +80,13 @@ public class Actualizar_Aulas {
                     JOptionPane.showMessageDialog(null, "Error al actualizar el laboratorio");
                 }
 
+                // Cierre del frame
                 ((JFrame) SwingUtilities.getWindowAncestor(actualizar)).dispose();
             }
         });
+
+        // Boton para volver al frame anterior
+
         volver.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -79,6 +98,7 @@ public class Actualizar_Aulas {
                 frame.setLocationRelativeTo(null);
                 frame.setVisible(true);
 
+                // Cierre del frame
                 ((JFrame) SwingUtilities.getWindowAncestor(volver)).dispose();
             }
         });

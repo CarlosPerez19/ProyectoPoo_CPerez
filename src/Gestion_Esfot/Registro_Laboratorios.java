@@ -1,15 +1,33 @@
 package Gestion_Esfot;
 
-public class Registro_Laboratorios {
+/**
+ * Clase que representa los datos de un laboratorio.
+ */
 
+public class Registro_Laboratorios {
+    // Variables de recepcion
     String codigo_lab;
     int numero_laboratorio;
     String nombre_laboratorio;
     int capacidad_laboratorio;
     int numero_computadores;
 
+    /**
+     * Constructor por defecto
+     */
+
     public Registro_Laboratorios() {
     }
+
+    /**
+     * Constructor con parámetros para inicializar un laboratorio.
+     *
+     * @param codigo_lab Código del laboratorio
+     * @param numero_laboratorio Número identificador del laboratorio
+     * @param nombre_laboratorio Nombre del laboratorio
+     * @param capacidad_laboratorio Capacidad del laboratorio
+     * @param numero_computadores Número de computadoras en el laboratorio
+     */
 
     public Registro_Laboratorios(String codigo_lab, int numero_laboratorio, String nombre_laboratorio, int capacidad_laboratorio, int numero_computadores) {
         this.codigo_lab = codigo_lab;
@@ -19,6 +37,10 @@ public class Registro_Laboratorios {
         this.numero_computadores = numero_computadores;
     }
 
+    /**
+     * Getter y setters
+     * @return Setean y devuelven las variables respectivas
+     */
     public String getCodigo_lab() {
         return codigo_lab;
     }
