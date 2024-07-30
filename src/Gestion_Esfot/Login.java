@@ -69,20 +69,22 @@ public class Login {
 
                             if (usuarioValido) {
                                 JOptionPane.showMessageDialog(null, "Usuario y Contraseña Correctos");
+                                JFrame frame = new JFrame();
+                                frame.setContentPane(new Administrador().mainPanel);
+                                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                                frame.pack();
+                                frame.setSize(900, 800);
+                                frame.setLocationRelativeTo(null);
+                                frame.setVisible(true);
+
                             } else {
                                 JOptionPane.showMessageDialog(null, "Usuario y Contraseña Incorrectos");
                             }
 
                         }
 
-                        JFrame frame = new JFrame();
-                        frame.setContentPane(new Administrador().mainPanel);
-                        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                        frame.pack();
-                        frame.setSize(900, 800);
-                        frame.setLocationRelativeTo(null);
-                        frame.setVisible(true);
-
+                        // Cierre del frame
+                        ((JFrame) SwingUtilities.getWindowAncestor(iniciarSesion)).dispose();
                         break;
 
                     case 2:
@@ -109,20 +111,22 @@ public class Login {
 
                             if (usuarioValido) {
                                 JOptionPane.showMessageDialog(null, "Usuario y Contraseña Correctos");
+                                JFrame frame2 = new JFrame();
+                                frame2.setContentPane(new Profesor().mainPanel);
+                                frame2.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                                frame2.pack();
+                                frame2.setSize(900, 800);
+                                frame2.setLocationRelativeTo(null);
+                                frame2.setVisible(true);
+
                             } else {
                                 JOptionPane.showMessageDialog(null, "Usuario y Contraseña Incorrectos");
                             }
 
-                            JFrame frame2 = new JFrame();
-                            frame2.setContentPane(new Profesor().mainPanel);
-                            frame2.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                            frame2.pack();
-                            frame2.setSize(900, 800);
-                            frame2.setLocationRelativeTo(null);
-                            frame2.setVisible(true);
-
                         }
 
+                        // Cierre del frame
+                        ((JFrame) SwingUtilities.getWindowAncestor(iniciarSesion)).dispose();
                         break;
 
                     case 3:
@@ -150,23 +154,22 @@ public class Login {
 
                             if (usuarioValido) {
                                 JOptionPane.showMessageDialog(null, "Usuario y Contraseña Correctos");
+                                JFrame frame3 = new JFrame();
+                                frame3.setContentPane(new Reservas_Aulas().mainPanel);
+                                frame3.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                                frame3.pack();
+                                frame3.setSize(900, 800);
+                                frame3.setLocationRelativeTo(null);
+                                frame3.setVisible(true);
+
                             } else {
                                 JOptionPane.showMessageDialog(null, "Usuario y Contraseña Incorrectos");
                             }
 
-                            JFrame frame3 = new JFrame();
-                            frame3.setContentPane(new Reservas_Aulas().mainPanel);
-                            frame3.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                            frame3.pack();
-                            frame3.setSize(900, 800);
-                            frame3.setLocationRelativeTo(null);
-                            frame3.setVisible(true);
-
-                        } catch (Exception ex) {
-                            JOptionPane.showMessageDialog(null, "Error al conectar");
-                            ex.printStackTrace();
                         }
 
+                        // Cierre del frame
+                        ((JFrame) SwingUtilities.getWindowAncestor(iniciarSesion)).dispose();
                         break;
                 }
             }
