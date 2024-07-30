@@ -82,7 +82,6 @@ public class Administrador {
                 ((JFrame) SwingUtilities.getWindowAncestor(aulas)).dispose();
             }
         });
-
         // Boton para cerrar sesion, abre el menu principal de logeo
         cerrarSesion.addActionListener(new ActionListener() {
             @Override
