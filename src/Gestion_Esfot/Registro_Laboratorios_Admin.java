@@ -86,8 +86,6 @@ public class Registro_Laboratorios_Admin {
                     }
                 }
 
-                // Cierre del frame actual
-                ((JFrame) SwingUtilities.getWindowAncestor(registrar)).dispose();
             }
         });
 

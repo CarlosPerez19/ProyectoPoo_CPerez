@@ -116,8 +116,6 @@ public class Eliminar_Usuarios {
                         break;
                 }
 
-                // Cierre del frame actual
-                ((JFrame) SwingUtilities.getWindowAncestor(eliminar)).dispose();
             }
         });
 

@@ -147,8 +147,6 @@ public class Buscar_Usuarios {
                         break;
                 }
 
-                // Cierre del frame
-                ((JFrame) SwingUtilities.getWindowAncestor(buscar)).dispose();
             }
         });
 

@@ -86,9 +86,6 @@ public class Actualizar_Laboratorios {
                 } catch (Exception ex){
                     JOptionPane.showMessageDialog(null, "Error al actualizar el laboratorio");
                 }
-
-                // Cierre del frame
-                ((JFrame) SwingUtilities.getWindowAncestor(actualizar)).dispose();
             }
         });
 

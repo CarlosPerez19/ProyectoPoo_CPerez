@@ -70,8 +70,6 @@ public class Buscar_Aula {
                     ex.printStackTrace();
                 }
 
-                // Cierre del frame
-                ((JFrame) SwingUtilities.getWindowAncestor(buscar)).dispose();
             }
         });
 

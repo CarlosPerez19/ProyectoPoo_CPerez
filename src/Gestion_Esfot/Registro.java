@@ -179,8 +179,6 @@ public class Registro extends Registro_Usuarios {
                         break;
                 }
 
-                // Cierre de la ventana
-                ((JFrame) SwingUtilities.getWindowAncestor(registro)).dispose();
             }
 
         });

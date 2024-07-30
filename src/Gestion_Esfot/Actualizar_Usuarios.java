@@ -234,9 +234,6 @@ public class Actualizar_Usuarios {
                         break;
                 }
 
-                // Cierre del frame
-                ((JFrame) SwingUtilities.getWindowAncestor(actualizar)).dispose();
-
             }
         });
 

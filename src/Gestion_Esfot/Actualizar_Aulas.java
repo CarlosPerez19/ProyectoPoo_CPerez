@@ -80,8 +80,6 @@ public class Actualizar_Aulas {
                     JOptionPane.showMessageDialog(null, "Error al actualizar el laboratorio");
                 }
 
-                // Cierre del frame
-                ((JFrame) SwingUtilities.getWindowAncestor(actualizar)).dispose();
             }
         });
 

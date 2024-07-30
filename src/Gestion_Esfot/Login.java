@@ -95,14 +95,15 @@ public class Login {
                                 frame.setLocationRelativeTo(null);
                                 frame.setVisible(true);
 
+                                // Cierre del frame
+                                ((JFrame) SwingUtilities.getWindowAncestor(iniciarSesion)).dispose();
+
                             } else {
                                 JOptionPane.showMessageDialog(null, "Usuario y Contraseña Incorrectos");
                             }
 
                         }
 
-                        // Cierre del frame
-                        ((JFrame) SwingUtilities.getWindowAncestor(iniciarSesion)).dispose();
                         break;
 
                     case 2:
@@ -144,14 +145,15 @@ public class Login {
                                 frame2.setLocationRelativeTo(null);
                                 frame2.setVisible(true);
 
+                                // Cierre del frame
+                                ((JFrame) SwingUtilities.getWindowAncestor(iniciarSesion)).dispose();
+
                             } else {
                                 JOptionPane.showMessageDialog(null, "Usuario y Contraseña Incorrectos");
                             }
 
                         }
 
-                        // Cierre del frame
-                        ((JFrame) SwingUtilities.getWindowAncestor(iniciarSesion)).dispose();
                         break;
 
                     case 3:
@@ -193,14 +195,15 @@ public class Login {
                                 frame3.setLocationRelativeTo(null);
                                 frame3.setVisible(true);
 
+                                // Cierre del frame
+                                ((JFrame) SwingUtilities.getWindowAncestor(iniciarSesion)).dispose();
+
                             } else {
                                 JOptionPane.showMessageDialog(null, "Usuario y Contraseña Incorrectos");
                             }
 
                         }
 
-                        // Cierre del frame
-                        ((JFrame) SwingUtilities.getWindowAncestor(iniciarSesion)).dispose();
                         break;
                 }
             }

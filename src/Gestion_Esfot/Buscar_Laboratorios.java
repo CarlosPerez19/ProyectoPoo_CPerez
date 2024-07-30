@@ -71,8 +71,6 @@ public class Buscar_Laboratorios {
                     ex.printStackTrace();
                 }
 
-                // Cierre del frame
-                ((JFrame) SwingUtilities.getWindowAncestor(buscar)).dispose();
             }
         });
 

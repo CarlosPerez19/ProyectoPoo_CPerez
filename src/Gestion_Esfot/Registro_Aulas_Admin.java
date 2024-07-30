@@ -83,9 +83,6 @@ public class Registro_Aulas_Admin {
                     }
                 }
 
-                // Cierre del frame
-                ((JFrame) SwingUtilities.getWindowAncestor(registrar)).dispose();
-
             }
         });
 

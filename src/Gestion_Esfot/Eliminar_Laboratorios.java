@@ -60,8 +60,6 @@ public class Eliminar_Laboratorios {
                     JOptionPane.showMessageDialog(null, "Error al eliminar el Laboratorio");
                 }
 
-                // Cierre del frame
-                ((JFrame) SwingUtilities.getWindowAncestor(eliminar)).dispose();
             }
         });
 

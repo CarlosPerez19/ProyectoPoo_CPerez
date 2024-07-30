@@ -61,8 +61,6 @@ public class Eliminar_Aula {
                     JOptionPane.showMessageDialog(null, "Error al eliminar el Aula");
                 }
 
-                // Cierre del frame
-                ((JFrame) SwingUtilities.getWindowAncestor(eliminar)).dispose();
             }
         });
 
