@@ -7,6 +7,9 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * Clase para el inicio de sesion de acuerdo a la seleccion del usuario
+ */
 public class Login {
     public JPanel mainPanel;
     private JTextField usuario;
@@ -16,12 +19,17 @@ public class Login {
     private JComboBox rol;
     private JLabel image;
 
+    /**
+     * Constructor para la clase login
+     */
     public Login() {
 
+        // Imagen que aparecera en el frame
         ImageIcon icon = new ImageIcon("src/img/logo_esfot_buho.png");
         icon = new ImageIcon(icon.getImage().getScaledInstance(200, 100, java.awt.Image.SCALE_SMOOTH));
         image.setIcon(icon);
 
+        // Boton para registrar un usuario nuevo
         registrarseButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -34,39 +42,49 @@ public class Login {
                 frame.setVisible(true);
             }
         });
+
+        // Boton para iniciar sesion de acuerdo a la seleccion del usuario
         iniciarSesion.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
 
+                // Control de campos vacios
                 if (usuario.getText().isEmpty() || contrasenia.getText().isEmpty() || rol.getSelectedIndex() == 0) {
                     JOptionPane.showMessageDialog(null, "Debe llenar todos los campos");
                     return;
                 }
 
-
+                // Conexion de acuerdo al rol seleccionado por el usuario
                 switch (rol.getSelectedIndex()) {
                     case 1:
-                        try (MongoClient mongoClient = MongoClients.create("mongodb+srv://carlos:1234@proyectopoo.powzq9l.mongodb.net/ProyectoPoo")) {
 
+                        // Conexion con la base de datos e ingreso a la coleccion de administrador
+                        try (MongoClient mongoClient = MongoClients.create("mongodb+srv://carlos:1234@proyectopoo.powzq9l.mongodb.net/ProyectoPoo")) {
                             MongoDatabase database = mongoClient.getDatabase("ProyectoPoo");
                             MongoCollection<Document> collection = database.getCollection("Administrador");
                             FindIterable<Document> documentos = collection.find();
 
                             boolean usuarioValido = false;
 
+                            // Varibables de busqueda
                             String usuarioIngresado = usuario.getText();
+
+                            //Encriptacion de contraseña
                             String contraseniaIngresada = Encriptar.generateHash(contrasenia.getText());
 
+                            // Busqueda de variables
                             for (Document documento : documentos) {
                                 String busquedaUsuario = documento.getString("Usuario");
                                 String busquedaContrasenia = documento.getString("Contrasenia");
 
+                                // Comparacion de variables
                                 if (busquedaUsuario.equals(usuarioIngresado) && busquedaContrasenia.equals(contraseniaIngresada)) {
                                     usuarioValido = true;
                                     break;
                                 }
                             }
 
+                            // Apertura del frame
                             if (usuarioValido) {
                                 JOptionPane.showMessageDialog(null, "Usuario y Contraseña Correctos");
                                 JFrame frame = new JFrame();
@@ -88,27 +106,34 @@ public class Login {
                         break;
 
                     case 2:
-                        try (MongoClient mongoClient = MongoClients.create("mongodb+srv://carlos:1234@proyectopoo.powzq9l.mongodb.net/ProyectoPoo")) {
 
+                        // Conexion con la base de datos e ingreso a la coleccion de profesor
+                        try (MongoClient mongoClient = MongoClients.create("mongodb+srv://carlos:1234@proyectopoo.powzq9l.mongodb.net/ProyectoPoo")) {
                             MongoDatabase database = mongoClient.getDatabase("ProyectoPoo");
                             MongoCollection<Document> collection = database.getCollection("Profesor");
                             FindIterable<Document> documentos = collection.find();
 
                             boolean usuarioValido = false;
 
+                            // Recepcion de variables
                             String usuarioIngresado = usuario.getText();
+
+                            //Encriptacion de contraseña
                             String contraseniaIngresada = Encriptar.generateHash(contrasenia.getText());
 
+                            // Busqeuda de variables en el documento
                             for (Document documento : documentos) {
                                 String busquedaUsuario = documento.getString("Usuario");
                                 String busquedaContrasenia = documento.getString("Contrasenia");
 
+                                // Comparacion de las variables
                                 if (busquedaUsuario.equals(usuarioIngresado) && busquedaContrasenia.equals(contraseniaIngresada)) {
                                     usuarioValido = true;
                                     break;
                                 }
                             }
 
+                            // Apertura del frame correspondiente
                             if (usuarioValido) {
                                 JOptionPane.showMessageDialog(null, "Usuario y Contraseña Correctos");
                                 JFrame frame2 = new JFrame();
@@ -131,27 +156,33 @@ public class Login {
 
                     case 3:
 
+                        // Conexion con la base de datos e ingreso a la coleccion de estudiantes.
                         try (MongoClient mongoClient = MongoClients.create("mongodb+srv://carlos:1234@proyectopoo.powzq9l.mongodb.net/ProyectoPoo")) {
-
                             MongoDatabase database = mongoClient.getDatabase("ProyectoPoo");
                             MongoCollection<Document> collection = database.getCollection("Estudiante");
                             FindIterable<Document> documentos = collection.find();
 
                             boolean usuarioValido = false;
 
+                            // Recepccion de variables
                             String usuarioIngresado = usuario.getText();
+
+                            // Encriptacion de contraseña
                             String contraseniaIngresada = Encriptar.generateHash(contrasenia.getText());
 
+                            // Busqueda de variables en el documento
                             for (Document documento : documentos) {
                                 String busquedaUsuario = documento.getString("Usuario");
                                 String busquedaContrasenia = documento.getString("Contrasenia");
 
+                                // Comparacion de variables
                                 if (busquedaUsuario.equals(usuarioIngresado) && busquedaContrasenia.equals(contraseniaIngresada)) {
                                     usuarioValido = true;
                                     break;
                                 }
                             }
 
+                            // Apertura del frame correspondiente
                             if (usuarioValido) {
                                 JOptionPane.showMessageDialog(null, "Usuario y Contraseña Correctos");
                                 JFrame frame3 = new JFrame();
