@@ -39,6 +39,12 @@ public class Actualizar_Laboratorios {
             @Override
             public void actionPerformed(ActionEvent e) {
 
+                // Control de campos
+                if (codigo_lab.getText().isEmpty() || actualizar_element.getSelectedIndex() == 0){
+                    JOptionPane.showMessageDialog(null, "Llenar los campos");
+                    return;
+                }
+
                 // Conexion con la base de datos e ingreso a la coleccion de laboratorios
                 try (MongoClient mongoClient = MongoClients.create("mongodb+srv://carlos:1234@proyectopoo.powzq9l.mongodb.net/ProyectoPoo")) {
                     MongoDatabase database = mongoClient.getDatabase("ProyectoPoo");
