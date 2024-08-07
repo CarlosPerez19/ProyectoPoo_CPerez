@@ -23,9 +23,11 @@ Objetivos especificos:
 
   En primer lugar al momento de ejecutar el programa, si existe un usuario registrado debera ingresar con sus respectivas credenciales ademas del seleccionar el rol con el cual va a ingresar.
 
+  Internamente se realiza un control de los campos ingresados por el usuario, en caso de que los campos esten vacios o que no seleccione ningun rol aparecera un mensaje el cual indicara al usuario que debe llenar los respectivos campos.
+
   ![image](https://github.com/user-attachments/assets/5545b56d-c3c9-46d7-9da9-e862f8384f74)
 
-  Dependiendo del rol seleccionado internamente el programa se conectara con la base de datos de MongoDB, ademas de ingresar a la respectiva coleccion que es respectivo al rol seleccionado
+  Dependiendo del rol seleccionado internamente el programa se conectara con la base de datos de MongoDB, ademas de ingresar a la respectiva coleccion que es respectivo al rol seleccionado por el usuario y posteriormente el programa buscara dentro de la base de datos si     los datos estan registrados se permitira al usuario acceder, caso contrario no permitira ingresar indicando que el usuario o contraseña estan incorrectos.
 
 
 - REGISTRO:
