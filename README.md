@@ -7,7 +7,8 @@ Fecha: 08/08/2024
 
 Gestión de Aulas y laboratorios de la ESFOT.
 
-Objetivo General: Agilizar la reserva de aulas y laboratorios de la ESFOT. 
+Objetivo General: Agilizar la reserva de aulas y laboratorios de la ESFOT.
+
 
 Objetivos especificos: 
 
@@ -27,8 +28,11 @@ Objetivos especificos:
 
   ![image](https://github.com/user-attachments/assets/5545b56d-c3c9-46d7-9da9-e862f8384f74)
 
-  Dependiendo del rol seleccionado internamente el programa se conectara con la base de datos de MongoDB, ademas de ingresar a la respectiva coleccion que es respectivo al rol seleccionado por el usuario y posteriormente el programa buscara dentro de la base de datos si     los datos estan registrados se permitira al usuario acceder, caso contrario no permitira ingresar indicando que el usuario o contraseña estan incorrectos.
+  Dependiendo del rol seleccionado internamente el programa se conectara con la base de datos de MongoDB, ademas de ingresar a la respectiva coleccion que es respectivo al rol seleccionado por el usuario y posteriormente el programa buscara dentro de la base de datos si   los datos estan registrados se permitira al usuario acceder, caso contrario no permitira ingresar indicando que el usuario o contraseña estan incorrectos.
 
 
 - REGISTRO:
+- 
+![image](https://github.com/user-attachments/assets/43934787-bd00-4ed8-b742-54c10b20736b)
+
 
