@@ -20,6 +20,13 @@ Objetivos especificos:
 
 -Integrar una conexion con la base de MongoDB en la nube.
 
+- ## Encriptacion:
+
+![image](https://github.com/user-attachments/assets/7a4c6681-6e92-4e4b-8392-54180781a72b)
+
+Este metodo permitira encriptar las respectivas contraseñas que posteriormente seran enviadas a la base de datos.
+
+
 - ## LOGIN:
   
   ![image](https://github.com/user-attachments/assets/9449eb67-f203-4631-a4c1-d65eeac934d1)
@@ -144,7 +151,16 @@ El programa ingresara a la coleccion seleccionada por el rol del usuario, buscan
  ![image](https://github.com/user-attachments/assets/0f1a7c9f-4bde-4892-bfab-974a770d4ae6)
 
  Al conectarse con la base de datos se ingresara a la respectiva coleccion para esta vez poder registrar el laboratorio dentro de la base de datos.
- 
+
+ - Clase laboratorios:
+
+![image](https://github.com/user-attachments/assets/54a7ee71-c940-4d66-85f2-b76b6c140fb7)
+
+Se asignan los respectivos atributos para la creacion del objeto y se crean los constructores para poder señar a los respectivos atribus
+
+![image](https://github.com/user-attachments/assets/3d5c99c1-c455-46f6-bc4f-e6f9f4080f27)
+
+Se crean los getters y settear para poder obtener y almacenar los respectivos atributos en el objeto.
 
  ## Eliminar Laboratorios:
 
@@ -171,6 +187,136 @@ En primer se realiza el respectivo control para que los campos esten llenos, pos
 ![image](https://github.com/user-attachments/assets/3b1b6cb1-a6a9-4413-9617-eff5905318a7)
 
 El administador debera ingresar el codigo del laboratorio a buscar y posteriormente se presentara un recuadro con los respectivos datos almacenados.
+
+![image](https://github.com/user-attachments/assets/cfb77ec2-3dbc-41e9-abb4-84980c43adaf)
+
+En primer lugar se realiza el respectivo control con respecto a los campos vacios.
+
+El programa ingresara a la coleccion en la base de datos en caso de encotrar el codigo del laboratorio mostrara una ventan con los respectivos datos del laboratorio, en caso de no encontrar el laboratorio se presentara un mensaje mencionando que el laboratorio no ha sido registrado.
+
+- ## Aulas:
+
+![image](https://github.com/user-attachments/assets/8ca2e525-06ca-4d03-a89e-10ca575cc8a9)
+
+El administrador contara una vez mas con un CRUD para poder realizar la respectiva gestion de aulas.
+
+## Registrar Aulas:
+
+![image](https://github.com/user-attachments/assets/48c38ad2-c565-4138-a534-859aceb475b6)
+
+El administrador podra registrar una nueva aula llenando los respectivos campos para el registro.
+
+![image](https://github.com/user-attachments/assets/677bff0a-78b5-4bf8-a464-9d65624d0a65)
+
+Se realiza el respectivo control de los campos vacios y crea un objeto en el que se setearan los respectivos atributos. Se realiza la conexion con la base de datos e ingreso con la respectiva coleccion para finalmente poder registrar el aula en la base de datos.
+
+- Clase Aulas:
+
+![image](https://github.com/user-attachments/assets/67226119-a9b9-4d9e-b452-6845f1474e61)
+
+Se asignan los respectivos atributos a la clase para que posteriormente puedan ser seteados, ademas de generar los respectivos contructores.
+
+![image](https://github.com/user-attachments/assets/a4774bbd-f030-4f3a-b661-97ddd4ff615a)
+
+Se generan los getters y setters para poder obtener y setear los respectivos atributos del objeto.
+
+
+
+## Eliminar Aulas:
+
+![image](https://github.com/user-attachments/assets/c69dca4b-5889-4cd1-a889-07ce17673824)
+
+El adiministrador podra eliminar un aula por medio de su respectivo codigo.
+
+![image](https://github.com/user-attachments/assets/3aa89684-a578-4fc1-b5ae-bb17249f5c95)
+
+Se realiza el respectivo control de los campos vacios, se realiza la conexion con la base de datos y la respectiva coleccion en caso de que el codigo del aula se encontrado se eliminara de la base de datos en caso contrario se presentara un error.
+
+
+## Actualizar Aulas:
+
+![image](https://github.com/user-attachments/assets/f728a1cc-dbfd-4e92-bf15-beb5dc5565db)
+
+El administrador podra actualizar un aula por medio de su codigo, ademas debera seleccionar el campo que quiere actualizar e ingresar un nuevo valor.
+
+![image](https://github.com/user-attachments/assets/6cb421f0-aaab-46fb-bf55-72c582178ffd)
+
+Al conectarse con la base de datos y su respectiva coleccion se buscara el codigo del aula y por medio de la seleccion del usuario se actualizara el campo respectivo.
+
+## Buscar Aulas:
+
+![image](https://github.com/user-attachments/assets/b7bda8a9-ee62-4864-888d-0fae00859402)
+
+El administrador podra buscar un aula por medio del respectivo codigo del aula.
+
+![image](https://github.com/user-attachments/assets/294e5fdf-68f0-42e2-ae6a-b1634f5e9732)
+
+Se realiza el control de los campos vacios, y en caso de encontrar el aula se mostrara en cuadro los respectivos datos del aula en caso de no encontrar el codigo aparecera un mensaje indicando que el aula no esta registrada.
+
+- ## Profesor:
+
+![image](https://github.com/user-attachments/assets/2a17e5f5-bf7f-420a-979f-1d49c48cd4d1)
+
+El profesor podra realizar la reserva de aulas y laboratorios.
+
+![image](https://github.com/user-attachments/assets/7319afc6-62b2-4d82-8324-de35283beaf0)
+
+El profesor debera llenar los respectivos campos de reserva para poder realizarla.
+
+![image](https://github.com/user-attachments/assets/329a8459-d994-41cc-a508-315497b85cf9)
+
+Se realiza el respectivo control de variables para que estas no esten vacias.
+
+![image](https://github.com/user-attachments/assets/f5d38330-710e-49db-8cba-f34f3756f826)
+
+![image](https://github.com/user-attachments/assets/d624d34a-1b4f-48ff-b6e6-99198a73036c)
+
+A continuacion se crerara un objeto con los atributos de la reserva, y posteriormente se hara la conexion con la base de datos y la respectiva coleccion de reservas. En caso de que existe una reserva en el mismo horario se mostrara un mensaje indicando que el laboratorio o aula ya esta reservado en ese horario
+
+- ## Estudiante:
+
+![image](https://github.com/user-attachments/assets/3b053dec-7cff-4e99-823a-9247fdf47bff)
+
+Los estudiantes unicamente podran realizar la reserva de aulas, deberan los respectivos campos para la reserva
+
+![image](https://github.com/user-attachments/assets/60bb1c38-c72a-4db0-a835-f5ce4b352eef)
+
+Se realiza el control de los campos vacios, ademas de crear un objeto seteando los respectivos atributos.
+
+![image](https://github.com/user-attachments/assets/bef62078-0602-4258-bb78-494c588ad6ed)
+
+Se realiza la conexion con la base de datos y su respectiva coleccion, ademas de registrar la reserva.
+
+![image](https://github.com/user-attachments/assets/d64e44dd-676e-4fd4-87e9-9c3fd240d142)
+
+En caso ya existir un reserva en el horario se mostrara un mensaje indicando que el aula ya esta reservada en ese horario.
+
+- # Clase Reserva:
+
+![image](https://github.com/user-attachments/assets/ac99ca01-c720-4f69-9b41-39bfd4b7a4e6)
+
+Se asgina los respectivos atributos para la creacion del objeto para las reservas.
+
+![image](https://github.com/user-attachments/assets/c7d3fb54-a8b7-4925-a1b5-4bd0d15018e5)
+
+Se generan los respectivos getters y setters para poder obtener o setear los atributos del objeto.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
