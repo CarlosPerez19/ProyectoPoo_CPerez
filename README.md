@@ -5,7 +5,7 @@ Estudiante: Carlos Perez
 
 Fecha: 08/08/2024
 
-Video: 
+Video: https://www.youtube.com/watch?v=mCWslH_x93k
 
 Gestión de Aulas y laboratorios de la ESFOT.
 
